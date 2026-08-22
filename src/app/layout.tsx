@@ -21,8 +21,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Vtechcodelabs | Enterprise Web Architect & Engineering",
-  description: "High-performance digital engineering designed to maximize conversion rates, elevate user experiences, and scale your brand globally.",
+  title: "Codeluz — Custom Web Development & Solutions",
+  description: "Codeluz creates high-performance, custom-built websites designed around how your business operates.",
 };
 
 export default function RootLayout({
