@@ -1,7 +1,6 @@
 "use client";
-
 import { motion } from "framer-motion";
-import { ArrowUpRight, Stethoscope, Dumbbell, Scissors } from "lucide-react";
+import { ArrowUpRight, Stethoscope, Dumbbell } from "lucide-react";
 import Link from "next/link";
 
 const demos = [
@@ -20,14 +19,6 @@ const demos = [
     icon: <Dumbbell size={26} />,
     color: "#D4AF37",
     href: "/demo-gym",
-  },
-  {
-    id: "salon",
-    title: "Salon Website",
-    desc: "A salon website with a services menu, gallery, and appointment booking — designed to convert browsers into bookings.",
-    icon: <Scissors size={26} />,
-    color: "#A855F7",
-    href: "/demo-salon",
   },
 ];
 
@@ -52,8 +43,7 @@ export default function PortfolioPage() {
             Explore one that fits your industry.
           </p>
         </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[800px] mx-auto">
           {demos.map((demo, i) => (
             <motion.div
               key={demo.id}
@@ -90,7 +80,6 @@ export default function PortfolioPage() {
             </motion.div>
           ))}
         </div>
-
         <div className="mt-16 text-center">
           <p className="text-slate-500 text-sm">
             Want something built for your specific business?{" "}
