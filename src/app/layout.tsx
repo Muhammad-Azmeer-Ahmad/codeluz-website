@@ -23,6 +23,15 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Codeluz — Custom Web Development & Solutions",
   description: "Codeluz creates high-performance, custom-built websites designed around how your business operates.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icon.png" },
+    ],
+  },
 };
 
 export default function RootLayout({
