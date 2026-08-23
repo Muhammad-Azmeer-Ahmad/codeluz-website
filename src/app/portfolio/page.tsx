@@ -10,7 +10,7 @@ const demos = [
     desc: "A booking-ready website for a medical clinic — services, doctor bios, and an appointment form built in.",
     icon: <Stethoscope size={26} />,
     color: "#00F0FF",
-    href: "/demo-clinic",
+    href: "/demo-healthcare",
   },
   {
     id: "gym",
