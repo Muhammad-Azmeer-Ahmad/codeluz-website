@@ -68,7 +68,7 @@ export default function ContactPage() {
 
               <div className="flex flex-col gap-6">
                 {[
-                  { icon: <Phone size={20} />, label: "WhatsApp", value: "+92 XXX XXXXXXX", color: "#00F0FF" },
+                  { icon: <Phone size={20} />, label: "WhatsApp", value: "+92 327 4644729", color: "#00F0FF" },
                   { icon: <Mail size={20} />, label: "Email", value: "contact@codeluz.com", color: "#A855F7" },
                   { icon: <MapPin size={20} />, label: "Based In", value: "Lahore, Pakistan", color: "#D4AF37" },
                 ].map((item, idx) => (
@@ -132,39 +132,39 @@ export default function ContactPage() {
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-  <motion.div className="flex flex-col gap-2" variants={fieldVariants} whileFocus="focus" whileHover="focus" initial="rest">
-    <label className="text-slate-400 text-sm font-semibold tracking-wide">Full Name</label>
-    <motion.input
-      type="text" name="name" required
-      whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
-      placeholder="Enter your full name"
-    />
-  </motion.div>
-  <motion.div className="flex flex-col gap-2">
-    <label className="text-slate-400 text-sm font-semibold tracking-wide">Email or WhatsApp</label>
-    <motion.input
-      type="text" name="contact" required
-      whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
-      placeholder="How should we reach you?"
-    />
-  </motion.div>
-  <motion.div className="flex flex-col gap-2">
-    <label className="text-slate-400 text-sm font-semibold tracking-wide">Phone Number</label>
-    <motion.input
-      type="tel" name="phone" required
-      pattern="^\+?[0-9\s\-\(\)]{7,20}$"
-      title="Enter a valid phone number"
-      whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
-      placeholder="+92 300 1234567"
-    />
-  </motion.div>
-</div>
+                <motion.div className="flex flex-col gap-2" variants={fieldVariants} whileFocus="focus" whileHover="focus" initial="rest">
+                  <label className="text-slate-400 text-sm font-semibold tracking-wide">Full Name</label>
+                  <motion.input
+                    type="text" name="name" required
+                    whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
+                    placeholder="Enter your full name"
+                  />
+                </motion.div>
+                <motion.div className="flex flex-col gap-2">
+                  <label className="text-slate-400 text-sm font-semibold tracking-wide">Email Address</label>
+                  <motion.input
+                    type="email" name="email" required
+                    whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
+                    placeholder="name@company.com"
+                  />
+                </motion.div>
+                <motion.div className="flex flex-col gap-2">
+                  <label className="text-slate-400 text-sm font-semibold tracking-wide">Phone / WhatsApp</label>
+                  <motion.input
+                    type="tel" name="phone" required
+                    pattern="^\+?[0-9\s\-\(\)]{7,20}$"
+                    title="Enter a valid phone number"
+                    whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
+                    placeholder="+92 300 1234567"
+                  />
+                </motion.div>
+              </div>
 
               <div className="flex flex-col gap-2">
                 <label className="text-slate-400 text-sm font-semibold tracking-wide">What Do You Need?</label>
