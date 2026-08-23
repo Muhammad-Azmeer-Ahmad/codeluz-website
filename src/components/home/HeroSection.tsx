@@ -11,11 +11,9 @@ gsap.registerPlugin(ScrollTrigger);
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isQuoteHovered, setIsQuoteHovered] = useState(false);
 
   useEffect(() => {
-    // --- GSAP Hero Text Animations ---
     const ctx = gsap.context(() => {
       gsap.set(".hero-anim", { opacity: 0, y: 50 });
       gsap.to(".hero-anim", {
@@ -27,7 +25,6 @@ export function HeroSection() {
         delay: 0.2,
       });
 
-      // Fixed Scroll Fade (Prevents Double Text Ghosting)
       if (contentRef.current) {
         gsap.to(contentRef.current, {
           opacity: 0,
@@ -43,114 +40,20 @@ export function HeroSection() {
       }
     }, containerRef);
 
-    // --- Interactive Canvas Wave System ---
-    const canvas = canvasRef.current;
-    if (!canvas) return () => ctx.revert();
-    const c = canvas.getContext("2d");
-    if (!c) return () => ctx.revert();
-
-    let animationFrameId: number;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-
-    const mouse = { x: width / 2, y: height / 2, targetX: width / 2, targetY: height / 2 };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      mouse.targetX = e.clientX;
-      mouse.targetY = e.clientY;
-    };
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("resize", handleResize);
-
-    let step = 0;
-
-    const render = () => {
-      step += 0.012;
-      mouse.x += (mouse.targetX - mouse.x) * 0.06;
-      mouse.y += (mouse.targetY - mouse.y) * 0.06;
-
-      c.clearRect(0, 0, width, height);
-
-      const mouseFactorX = (mouse.x / width - 0.5) * 220;
-      const mouseFactorY = (mouse.y / height - 0.5) * 180;
-
-      const drawWave = (
-        colorStop1: string,
-        colorStop2: string,
-        lineWidth: number,
-        frequency: number,
-        amplitude: number,
-        speedMultiplier: number,
-        yOffset: number,
-        blurAmount: number
-      ) => {
-        c.save();
-        c.shadowColor = colorStop1;
-        c.shadowBlur = blurAmount;
-
-        const gradient = c.createLinearGradient(0, 0, width, height);
-        gradient.addColorStop(0, colorStop1);
-        gradient.addColorStop(0.6, colorStop2);
-        gradient.addColorStop(1, "rgba(0,0,0,0)");
-
-        c.beginPath();
-        c.lineWidth = lineWidth;
-        c.strokeStyle = gradient;
-
-        for (let x = -50; x <= width + 50; x += 8) {
-          const y =
-            Math.sin(x * frequency + step * speedMultiplier) * amplitude +
-            Math.cos(x * 0.0012 + step * 0.8) * (amplitude * 0.4) +
-            height * yOffset +
-            mouseFactorY * (1 - x / width);
-
-          if (x === -50) {
-            c.moveTo(x + mouseFactorX * 0.25, y);
-          } else {
-            c.lineTo(x + mouseFactorX * 0.25, y);
-          }
-        }
-
-        c.stroke();
-        c.restore();
-      };
-
-      drawWave("rgba(0, 212, 255, 0.95)", "rgba(37, 99, 235, 0.8)", 32, 0.002, 110, 1.3, 0.48, 30);
-      drawWave("rgba(59, 130, 246, 0.9)", "rgba(147, 51, 234, 0.7)", 42, 0.0014, 150, 0.8, 0.56, 35);
-      drawWave("rgba(212, 175, 55, 0.9)", "rgba(0, 212, 255, 0.4)", 14, 0.0028, 75, 1.6, 0.42, 20);
-
-      animationFrameId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      ctx.revert();
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("resize", handleResize);
-      cancelAnimationFrame(animationFrameId);
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
     <section
       ref={containerRef}
-      /* Added -mb-px to eliminate the bottom 1px seam line */
       className="relative w-full flex flex-col items-center justify-center overflow-hidden bg-[#020204] -mb-px"
       style={{ minHeight: "100vh" }}
     >
-      {/* Background Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 z-0 pointer-events-none w-full h-full"
-      />
+      {/* Static background glow — brand colors only */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#D4AF37]/12 rounded-full blur-[130px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[280px] bg-[#00D4FF]/10 rounded-full blur-[120px]" />
+      </div>
 
       {/* Grid Overlay */}
       <div
@@ -219,13 +122,11 @@ export function HeroSection() {
         </p>
 
         <div className="hero-anim flex flex-wrap gap-4 items-center justify-center">
-          {/* Get a Quote button with "It's free" hover tooltip */}
           <div
             className="relative inline-flex flex-col items-center"
             onMouseEnter={() => setIsQuoteHovered(true)}
             onMouseLeave={() => setIsQuoteHovered(false)}
           >
-            {/* Tooltip */}
             <span
               className={`absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#00FF88] text-black text-[0.72rem] font-bold tracking-wide px-3 py-1.5 rounded-full shadow-[0_4px_16px_rgba(0,255,136,0.4)] transition-all duration-300 ease-out ${
                 isQuoteHovered
