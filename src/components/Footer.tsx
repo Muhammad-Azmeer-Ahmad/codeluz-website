@@ -67,7 +67,7 @@ export function Footer() {
           <h4 className="text-white text-sm tracking-wider font-semibold mb-5">CONTACT INFO</h4>
           <div className="flex flex-col gap-3 text-slate-400 text-sm">
             <div className="flex items-center gap-3"><MapPin size={16} className="text-[#00FF88]" /> Lahore, Pakistan</div>
-            <div className="flex items-center gap-3"><Phone size={16} className="text-[#00FF88]" /> +92 XXX XXXXXXX</div>
+            <div className="flex items-center gap-3"><Phone size={16} className="text-[#00FF88]" /> +92 327 4644729</div>
             <div className="flex items-center gap-3"><Mail size={16} className="text-[#00FF88]" /> contact@codeluz.com</div>
           </div>
         </div>
