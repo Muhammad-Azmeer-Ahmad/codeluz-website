@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Users } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export function AboutBusiness() {
   return (
@@ -51,56 +50,40 @@ export function AboutBusiness() {
           </Link>
         </motion.div>
 
-        {/* Media & Side Card Column */}
+        {/* Trust Signal Card (standalone, no image) */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative"
+          className="relative flex items-center justify-center"
         >
-          <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-slate-100 aspect-[4/3] relative">
-            <Image 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
-              alt="Codeluz Web Development Team" 
-              fill
-              className="object-cover"
-            />
-          </div>
-          
-          {/* Side Card / Trust Signals */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.12)] max-w-[320px]"
-          >
-            <div className="flex items-center gap-3 mb-4 border-b border-slate-100 pb-3">
-              <div className="w-9 h-9 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]">
-                <Users size={18} />
+          <div className="bg-white/95 backdrop-blur-md p-8 rounded-2xl border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.1)] max-w-[380px] w-full">
+            <div className="flex items-center gap-3 mb-5 border-b border-slate-100 pb-4">
+              <div className="w-11 h-11 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]">
+                <Users size={20} />
               </div>
               <div>
-                <div className="font-heading font-extrabold text-slate-900 leading-none">Codeluz</div>
-                <div className="text-xs text-slate-500 font-medium">Web Development Team</div>
+                <div className="font-heading font-extrabold text-slate-900 leading-none text-lg">Codeluz</div>
+                <div className="text-xs text-slate-500 font-medium mt-1">Web Development Team</div>
               </div>
             </div>
 
             <div className="grid grid-cols-3 gap-2 text-center">
               <div>
-                <div className="font-bold text-xs text-slate-900">Custom</div>
-                <div className="text-[0.68rem] text-slate-500 font-medium">From Scratch</div>
+                <div className="font-bold text-sm text-slate-900">Custom</div>
+                <div className="text-[0.72rem] text-slate-500 font-medium">From Scratch</div>
               </div>
               <div className="border-x border-slate-100 px-1">
-                <div className="font-bold text-xs text-slate-900">Direct</div>
-                <div className="text-[0.68rem] text-slate-500 font-medium">No Middlemen</div>
+                <div className="font-bold text-sm text-slate-900">Direct</div>
+                <div className="text-[0.72rem] text-slate-500 font-medium">No Middlemen</div>
               </div>
               <div>
-                <div className="font-bold text-xs text-slate-900">Secure</div>
-                <div className="text-[0.68rem] text-slate-500 font-medium">By Design</div>
+                <div className="font-bold text-sm text-slate-900">Secure</div>
+                <div className="text-[0.72rem] text-slate-500 font-medium">By Design</div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
 
       </div>
