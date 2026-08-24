@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook } from "lucide-react";
 
 export function Footer() {
   return (
@@ -68,7 +68,17 @@ export function Footer() {
           <div className="flex flex-col gap-3 text-slate-400 text-sm">
             <div className="flex items-center gap-3"><MapPin size={16} className="text-[#00FF88]" /> Lahore, Pakistan</div>
             <div className="flex items-center gap-3"><Phone size={16} className="text-[#00FF88]" /> +92 327 4644729</div>
-            <div className="flex items-center gap-3"><Mail size={16} className="text-[#00FF88]" /> contact@codeluz.com</div>
+            <a href="mailto:contact@codeluz.com" className="flex items-center gap-3 hover:text-[#00FF88] transition-colors w-fit">
+              <Mail size={16} className="text-[#00FF88]" /> contact@codeluz.com
+            </a>
+            <a
+              href="https://www.facebook.com/CodeluzStudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:text-[#00FF88] transition-colors w-fit"
+            >
+              <Facebook size={16} className="text-[#00FF88]" /> Facebook
+            </a>
           </div>
         </div>
       </div>
