@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -77,7 +77,16 @@ export function Footer() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 hover:text-[#00FF88] transition-colors w-fit"
             >
-              <Facebook size={16} className="text-[#00FF88]" /> Facebook
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="text-[#00FF88]"
+              >
+                <path d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.457h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94z" />
+              </svg>
+              Facebook
             </a>
           </div>
         </div>
