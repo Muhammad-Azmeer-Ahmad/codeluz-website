@@ -9,27 +9,70 @@ export default function PrivacyPolicyPage() {
           <p>Last updated: August 2026</p>
 
           <p>
-            Codeluz ("we," "us," or "our") respects your privacy. This policy explains what information we collect through our website and how we use it.
+            Codeluz ("we," "us," or "our") operates the website codeluz.com. This Privacy Policy explains what information we collect, how we use it, and the choices you have regarding your data when you visit our website or engage our services.
           </p>
 
-          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">Information We Collect</h2>
+          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">1. Information We Collect</h2>
           <p>
-            When you submit a form on our website, we collect the information you provide — including your name, email address, phone number, and project details. We do not collect any information automatically beyond standard website analytics.
+            We collect information in the following ways:
+          </p>
+          <p>
+            <strong className="text-slate-300">Information you provide directly:</strong> When you submit a form on our website — such as our contact form or project inquiry form — we collect the information you enter, which may include your name, email address, phone number, and details about your project or business.
+          </p>
+          <p>
+            <strong className="text-slate-300">Automatically collected information:</strong> Like most websites, we may use standard analytics tools to understand general visitor activity, such as pages viewed, browser type, and approximate location (city/country level). This information is aggregated and not used to personally identify you.
           </p>
 
-          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">How We Use Your Information</h2>
+          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">2. How We Use Your Information</h2>
           <p>
-            We use the information you submit solely to respond to your inquiry, discuss your project, and provide our services. We do not sell, rent, or share your information with third parties for marketing purposes.
+            We use the information we collect to:
+          </p>
+          <p>
+            — Respond to your inquiries and discuss your project<br />
+            — Provide, deliver, and improve our services<br />
+            — Communicate with you about your project, including via email or WhatsApp<br />
+            — Understand how visitors use our website so we can improve it
+          </p>
+          <p>
+            We do not sell, rent, or trade your personal information to third parties for marketing or advertising purposes.
           </p>
 
-          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">Data Storage</h2>
+          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">3. Third-Party Services</h2>
           <p>
-            Form submissions are sent directly to our email and are not stored in any external database beyond standard email hosting.
+            We use trusted third-party services to operate our website and business, including email delivery services (to receive and respond to form submissions) and website hosting infrastructure. These providers may process your information solely to help us deliver our services and are not permitted to use your data for their own purposes.
           </p>
 
-          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">Contact Us</h2>
+          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">4. Data Storage & Retention</h2>
           <p>
-            If you have any questions about this Privacy Policy, contact us at contact@codeluz.com.
+            Form submissions are delivered directly to our email inbox and are not stored in a separate database. We retain this information only for as long as necessary to respond to your inquiry or, if you become a client, for the duration of our working relationship and any period required by law or standard business record-keeping.
+          </p>
+
+          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">5. Cookies</h2>
+          <p>
+            Our website may use minimal cookies or similar technologies necessary for basic website functionality and analytics. We do not use cookies for third-party advertising or cross-site tracking.
+          </p>
+
+          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">6. Your Rights</h2>
+          <p>
+            Depending on your location, you may have the right to request access to, correction of, or deletion of the personal information we hold about you. To make such a request, contact us using the details below and we will respond within a reasonable timeframe.
+          </p>
+
+          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">7. Data Security</h2>
+          <p>
+            We take reasonable measures to protect the information you share with us. However, no method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security.
+          </p>
+
+          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">8. Changes to This Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time to reflect changes in our practices or for legal and operational reasons. The "Last updated" date at the top of this page will reflect the most recent revision.
+          </p>
+
+          <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">9. Contact Us</h2>
+          <p>
+            If you have any questions or requests regarding this Privacy Policy or your personal information, please contact us at{" "}
+            <a href="mailto:contact@codeluz.com" className="text-[#D4AF37] hover:underline">
+              contact@codeluz.com
+            </a>.
           </p>
         </div>
       </section>
