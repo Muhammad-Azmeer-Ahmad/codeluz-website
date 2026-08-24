@@ -59,7 +59,6 @@ export function Footer() {
           <ul className="flex flex-col gap-3">
             <li><Link href="/demo-clinic" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Clinic Website</Link></li>
             <li><Link href="/demo-gym" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Gym Website</Link></li>
-            <li><Link href="/demo-salon" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Salon Website</Link></li>
           </ul>
         </div>
         {/* Contact Col */}
