@@ -5,11 +5,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import NextImage from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FRAME_COUNT = 240;
-const FRAME_PATH = "/hero-frames-hd/ezgif-frame-";
+const FRAME_COUNT = 120;
+const FRAME_PATH = "/hero-frames-opt/frame-";
 
 function getFrameSrc(index: number): string {
   const num = String(index + 1).padStart(3, "0");
@@ -210,7 +211,7 @@ export function HeroSection() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=400%",
+          end: "+=250%",
           pin: pinWrapperRef.current,
           pinSpacing: true,
           scrub: true,
@@ -228,7 +229,7 @@ export function HeroSection() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=80vh",
+          end: "+=50vh",
           scrub: true,
           invalidateOnRefresh: true,
         },
@@ -257,8 +258,8 @@ export function HeroSection() {
       const phase2Tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "+=72vh",
-          end: "+=180vh",
+          start: "+=45vh",
+          end: "+=110vh",
           scrub: true,
           invalidateOnRefresh: true,
         },
@@ -289,8 +290,8 @@ export function HeroSection() {
       const phase3Tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "+=172vh",
-          end: "+=280vh",
+          start: "+=105vh",
+          end: "+=180vh",
           scrub: true,
           invalidateOnRefresh: true,
         },
@@ -321,8 +322,8 @@ export function HeroSection() {
       const phase4Tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "+=272vh",
-          end: "+=340vh",
+          start: "+=175vh",
+          end: "+=230vh",
           scrub: true,
           invalidateOnRefresh: true,
         },
@@ -354,33 +355,20 @@ export function HeroSection() {
         className="relative w-full flex items-center justify-center overflow-hidden will-change-transform"
         style={{ height: "100dvh" }}
       >
-        {/* Loading screen */}
-        {!isLoaded && (
-          <div className="absolute inset-0 z-[50] bg-[#020204] flex flex-col items-center justify-center gap-5">
-            <div className="relative w-48 h-1 bg-white/10 rounded-full overflow-hidden">
-              <div
-                className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#D4AF37] to-[#f5d87a] rounded-full transition-[width] duration-300 ease-out"
-                style={{ width: `${loadProgress}%` }}
-              />
-              <div
-                className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#D4AF37]/50 to-[#f5d87a]/50 rounded-full blur-sm transition-[width] duration-300 ease-out"
-                style={{ width: `${loadProgress}%` }}
-              />
-            </div>
-            <span className="text-white/40 text-xs font-body tracking-widest uppercase">
-              Loading Experience — {loadProgress}%
-            </span>
-          </div>
-        )}
+        {/* Instant fallback frame for zero-delay loading */}
+        <NextImage
+          src="/hero-frames-opt/frame-001.jpg"
+          alt="Hero background"
+          fill
+          priority
+          className="object-cover opacity-80"
+          sizes="100vw"
+        />
 
         {/* Canvas for frame animation */}
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 will-change-transform"
-          style={{
-            opacity: isLoaded ? 1 : 0,
-            transition: "opacity 0.8s ease-out",
-          }}
+          className="absolute inset-0 will-change-transform opacity-100 mix-blend-normal"
         />
 
         {/* Vignette overlay on canvas edges */}
@@ -471,6 +459,13 @@ export function HeroSection() {
             businesses present their services, reach more customers, and make it
             easier for people to take action.
           </p>
+
+          <div className="hero-phase-1 absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-60">
+            <span className="text-[0.65rem] uppercase tracking-widest text-white/50 mb-2">Scroll</span>
+            <div className="w-5 h-8 border border-white/20 rounded-full flex justify-center p-1">
+              <div className="w-1 h-1 bg-[#D4AF37] rounded-full animate-[bounce_1.5s_infinite]" />
+            </div>
+          </div>
 
           {/* ── Phase 2: Mid-scroll statement ── */}
           <div className="hero-phase-2 absolute inset-0 flex items-center justify-center pointer-events-none px-4">
