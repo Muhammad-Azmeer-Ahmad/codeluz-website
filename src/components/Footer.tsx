@@ -49,6 +49,7 @@ export function Footer() {
             <li><Link href="/" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Home</Link></li>
             <li><Link href="/about" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">About Us</Link></li>
             <li><Link href="/services" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Services</Link></li>
+            <li><Link href="/pricing" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Pricing</Link></li>
             <li><Link href="/contact" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Contact Us</Link></li>
             <li><Link href="#our-story" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Our Story</Link></li>
           </ul>
@@ -70,7 +71,7 @@ export function Footer() {
             <a href="mailto:contact@codeluz.com" className="flex items-center gap-3 hover:text-[#00FF88] transition-colors w-fit">
               <Mail size={16} className="text-[#00FF88]" /> contact@codeluz.com
             </a>
-            <a
+            
               href="https://www.facebook.com/CodeluzStudio"
               target="_blank"
               rel="noopener noreferrer"
