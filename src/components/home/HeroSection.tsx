@@ -9,12 +9,12 @@ import NextImage from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FRAME_COUNT = 120;
-const FRAME_PATH = "/hero-frames-opt/frame-";
+const FRAME_COUNT = 240;
+const FRAME_PATH = "/hero-frames-webp/frame-";
 
 function getFrameSrc(index: number): string {
   const num = String(index + 1).padStart(3, "0");
-  return `${FRAME_PATH}${num}.jpg`;
+  return `${FRAME_PATH}${num}.webp`;
 }
 
 export function HeroSection() {
@@ -56,19 +56,26 @@ export function HeroSection() {
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = "high";
 
-    // Scale image to cover the canvas (object-fit: cover)
     const dpr = dprRef.current;
     const cw = canvas.width / dpr;
     const ch = canvas.height / dpr;
     const iw = img.naturalWidth;
     const ih = img.naturalHeight;
-    const scale = Math.max(cw / iw, ch / ih);
+
+    // Calculate a "contain" scale and reduce it to 75% for extra sharpness
+    const baseScale = Math.min(cw / iw, ch / ih);
+    const scaleMultiplier = typeof window !== "undefined" && window.innerWidth < 768 ? 0.9 : 0.7; // slightly larger on mobile
+    const scale = baseScale * scaleMultiplier;
+    
     const sw = iw * scale;
     const sh = ih * scale;
     const sx = (cw - sw) / 2;
     const sy = (ch - sh) / 2;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Fill background with black to match the JPG background perfectly
+    ctx.fillStyle = "#000000";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
     ctx.save();
     ctx.scale(dpr, dpr);
     ctx.drawImage(img, sx, sy, sw, sh);
@@ -357,11 +364,11 @@ export function HeroSection() {
       >
         {/* Instant fallback frame for zero-delay loading */}
         <NextImage
-          src="/hero-frames-opt/frame-001.jpg"
+          src="/hero-frames-webp/frame-001.webp"
           alt="Hero background"
           fill
           priority
-          className="object-cover opacity-80"
+          className="object-contain scale-[0.9] sm:scale-[0.7] opacity-80"
           sizes="100vw"
         />
 
