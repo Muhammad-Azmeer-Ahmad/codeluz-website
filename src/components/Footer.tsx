@@ -72,7 +72,6 @@ export function Footer() {
               <Mail size={16} className="text-[#00FF88]" /> contact@codeluz.com
             </a>
             
-                          
               href="https://www.facebook.com/CodeluzStudio"
               target="_blank"
               rel="noopener noreferrer"
