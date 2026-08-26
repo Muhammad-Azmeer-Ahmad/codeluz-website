@@ -10,7 +10,7 @@ const demos = [
     desc: "A booking-ready website for a medical clinic — services, doctor bios, and an appointment form built in.",
     icon: <Stethoscope size={26} />,
     color: "#00F0FF",
-    href: "/demo-clinic",
+    href: "/demo-healthcare/index.html",
   },
   {
     id: "gym",
@@ -18,7 +18,7 @@ const demos = [
     desc: "A gym website with class schedules, trainer bios, and membership tiers — built to get visitors to join.",
     icon: <Dumbbell size={26} />,
     color: "#D4AF37",
-    href: "/demo-gym",
+    href: "/demo-gym/index.html",
   },
   {
     id: "salon",
@@ -26,7 +26,7 @@ const demos = [
     desc: "An elegant spa and salon website with a beautiful service menu and integrated booking platform.",
     icon: <Scissors size={26} />,
     color: "#C084FC",
-    href: "/demo-salon",
+    href: "/demo-salon", // This one doesn't exist yet, so we'll keep the Next.js placeholder route
   },
 ];
 

@@ -56,8 +56,7 @@ const cardVariants = {
 export function FeaturesGrid() {
   return (
     <section className="bg-[#06070d] py-32 px-6 relative">
-      {/* Top border line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
 
       <div className="max-w-[1100px] mx-auto">
         {/* Header */}

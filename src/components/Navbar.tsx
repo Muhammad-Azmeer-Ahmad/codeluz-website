@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Search, X } from "lucide-react";
+import { Search, X, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -18,75 +18,181 @@ const navLinks = [
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredPath, setHoveredPath] = useState<string | null>(null);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { scrollY } = useScroll();
 
-  // Close search on Escape
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() || 0;
+    
+    if (latest > 100 && latest > previous) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+    
+    setScrolled(latest > 30);
+  });
+
+  // Close modals on Escape
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") setIsSearchOpen(false); };
+    const handler = (e: KeyboardEvent) => { 
+      if (e.key === "Escape") {
+        setIsSearchOpen(false);
+        setIsMobileMenuOpen(false);
+      }
+    };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen || isSearchOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isMobileMenuOpen, isSearchOpen]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
   return (
     <>
-      <header
-        className={`fixed top-0 left-20 md:left-24 w-[calc(100%-5rem)] md:w-[calc(100%-6rem)] z-50 transition-all duration-500 ${
-          scrolled
+      <motion.header
+        variants={{
+          visible: { y: 0 },
+          hidden: { y: "-100%" },
+        }}
+        animate={hidden ? "hidden" : "visible"}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className={`fixed top-0 left-20 md:left-24 w-[calc(100%-5rem)] md:w-[calc(100%-6rem)] z-50 transition-colors duration-500 ${
+          scrolled || isMobileMenuOpen
             ? "bg-black/85 backdrop-blur-xl border-b border-white/[0.07] shadow-[0_1px_0_rgba(255,255,255,0.04)]"
             : "bg-transparent"
         }`}
       >
         <div className="w-full px-6 lg:px-12 h-24 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group no-underline">
+          <Link href="/" className="flex items-center gap-2.5 group no-underline z-50">
             <span className="text-white font-heading font-bold text-2xl tracking-wide">
               Codeluz
             </span>
           </Link>
 
-          {/* Center nav */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/[0.04] border border-white/[0.08] rounded-full px-2 py-1.5">
+          {/* Desktop Nav */}
+          <nav 
+            className="hidden lg:flex items-center gap-1 bg-white/[0.04] border border-white/[0.08] rounded-full px-2 py-1.5"
+            onMouseLeave={() => setHoveredPath(null)}
+          >
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
+              const isHovered = hoveredPath === link.href;
+              
+              // The text should be bright white when hovered or active
+              const isHighlighted = isHovered || (isActive && hoveredPath === null);
+
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-1.5 rounded-full text-[0.83rem] font-medium tracking-wide transition-all duration-200 ${
-                    isActive
-                      ? "text-black bg-[#D4AF37] shadow-[0_2px_10px_rgba(212,175,55,0.4)]"
-                      : "text-slate-400 hover:text-white"
+                  onMouseEnter={() => setHoveredPath(link.href)}
+                  className={`relative px-4 py-1.5 rounded-full text-[0.83rem] font-medium tracking-wide transition-colors duration-200 z-10 ${
+                    isHighlighted ? "text-white" : "text-slate-400 hover:text-white"
                   }`}
                 >
                   {link.label}
+                  {(isActive || isHovered) && (
+                    <motion.div
+                      layoutId="nav-pill"
+                      className={`absolute inset-0 rounded-full z-[-1] border border-white/10 ${
+                        isHovered ? "bg-white/[0.12]" : "bg-white/[0.08]"
+                      }`}
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
                 </Link>
               );
             })}
           </nav>
 
           {/* Right actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3 z-50">
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.06]"
+              className="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-white transition-colors rounded-full hover:bg-white/[0.06]"
             >
-              <Search size={16} />
+              <Search size={18} />
             </button>
             <Link
               href="/contact"
-              className="hidden sm:inline-flex items-center gap-1.5 bg-[#D4AF37] hover:bg-[#c9a430] text-black font-heading font-bold text-[0.78rem] tracking-widest uppercase px-5 py-2 rounded-full shadow-[0_0_15px_rgba(212,175,55,0.25)] hover:shadow-[0_0_25px_rgba(212,175,55,0.45)] transition-all duration-300"
+              className="hidden md:inline-flex items-center gap-1.5 bg-[#D4AF37] hover:bg-[#c9a430] text-black font-heading font-bold text-[0.78rem] tracking-widest uppercase px-6 py-2.5 rounded-full shadow-[0_0_15px_rgba(212,175,55,0.25)] hover:shadow-[0_0_25px_rgba(212,175,55,0.45)] hover:-translate-y-0.5 transition-all duration-300"
             >
               Get a Quote
             </Link>
+            
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden w-10 h-10 flex items-center justify-center text-slate-400 hover:text-white transition-colors rounded-full hover:bg-white/[0.06]"
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
-      </header>
+      </motion.header>
+
+      {/* Mobile Menu Drawer */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 top-0 left-20 md:left-24 w-[calc(100%-5rem)] md:w-[calc(100%-6rem)] bg-black/95 backdrop-blur-3xl z-40 pt-28 px-6 pb-6 flex flex-col"
+          >
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link, i) => {
+                const isActive = pathname === link.href;
+                return (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 + 0.1 }}
+                  >
+                    <Link
+                      href={link.href}
+                      className={`block text-2xl font-heading font-bold ${
+                        isActive ? "text-[#D4AF37]" : "text-slate-300 hover:text-white"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
+            
+            <div className="mt-auto pt-8 border-t border-white/10 flex flex-col gap-4">
+              <Link
+                href="/contact"
+                className="w-full flex items-center justify-center gap-1.5 bg-[#D4AF37] text-black font-heading font-bold text-sm tracking-widest uppercase px-6 py-4 rounded-xl shadow-[0_0_15px_rgba(212,175,55,0.25)]"
+              >
+                Get a Quote
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Search Modal */}
       <AnimatePresence>
