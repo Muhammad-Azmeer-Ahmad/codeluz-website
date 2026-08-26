@@ -4,6 +4,7 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,8 +28,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Codeluz — Custom Web Development & Solutions",
-  description: "Codeluz creates high-performance, custom-built websites designed around how your business operates.",
+  title: "Custom Websites for Clinics, Gyms & Salons in Pakistan | Codeluz",
+  description: "Codeluz creates high-performance, custom-built websites designed specifically for clinics, gyms, and salons in Pakistan. Get a premium digital presence that drives real business growth.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -52,6 +53,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
+          <WhatsAppCTA />
         </SmoothScroll>
       </body>
     </html>

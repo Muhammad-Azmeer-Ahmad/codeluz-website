@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Stethoscope, Dumbbell } from "lucide-react";
+import { ArrowUpRight, Stethoscope, Dumbbell, Scissors } from "lucide-react";
 import Link from "next/link";
 
 const demos = [
@@ -10,7 +10,7 @@ const demos = [
     desc: "A booking-ready website for a medical clinic — services, doctor bios, and an appointment form built in.",
     icon: <Stethoscope size={26} />,
     color: "#00F0FF",
-    href: "/demo-healthcare",
+    href: "/demo-clinic",
   },
   {
     id: "gym",
@@ -19,6 +19,14 @@ const demos = [
     icon: <Dumbbell size={26} />,
     color: "#D4AF37",
     href: "/demo-gym",
+  },
+  {
+    id: "salon",
+    title: "Salon Website",
+    desc: "An elegant spa and salon website with a beautiful service menu and integrated booking platform.",
+    icon: <Scissors size={26} />,
+    color: "#C084FC",
+    href: "/demo-salon",
   },
 ];
 
