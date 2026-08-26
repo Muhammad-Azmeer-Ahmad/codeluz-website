@@ -5,6 +5,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
+import { SideMarquee } from "@/components/SideMarquee";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -50,9 +51,12 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jakarta.variable} ${outfit.variable} dark`}>
       <body className="bg-black text-slate-200 antialiased font-body min-h-screen flex flex-col">
         <SmoothScroll>
+          <SideMarquee />
           <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <main className="flex-1 pl-8 md:pl-10">{children}</main>
+          <div className="pl-8 md:pl-10">
+            <Footer />
+          </div>
           <WhatsAppCTA />
         </SmoothScroll>
       </body>
