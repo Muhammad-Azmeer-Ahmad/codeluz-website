@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function WhoWeAre() {
   return (
-    <section className="bg-white text-slate-900 py-[100px] px-12">
+    <section className="bg-white/90 backdrop-blur-md text-slate-900 py-[100px] px-12">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

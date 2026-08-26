@@ -32,7 +32,7 @@ const demos = [
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-[#050608]">
+    <div className="min-h-screen pt-32 pb-20 relative">
       <section className="px-8 lg:px-12 max-w-[1300px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

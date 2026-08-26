@@ -1,6 +1,6 @@
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-[#050608] px-8 lg:px-12">
+    <div className="min-h-screen pt-32 pb-20 relative px-8 lg:px-12">
       <section className="max-w-[800px] mx-auto">
         <h1 className="font-heading text-4xl font-extrabold text-white mb-8">
           Privacy Policy

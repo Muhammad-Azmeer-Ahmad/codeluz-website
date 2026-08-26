@@ -52,14 +52,25 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
       <body className="bg-black text-slate-200 antialiased font-body min-h-screen flex flex-col selection:bg-[#00F0FF]/30 selection:text-white">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="fixed top-0 left-0 w-screen h-screen object-cover z-0 opacity-30 pointer-events-none"
+          >
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3GJaYKPxdnQG0Q9O26lu6DPmcHu/hf_20260805_192612_e00017a8-56b0-4957-935b-9ffd87663994.mp4" type="video/mp4" />
+          </video>
           <SmoothScroll>
-            <SideMarquee />
-            <Navbar />
-            <main className="flex-1 pl-10 md:pl-24">{children}</main>
-            <div className="pl-10 md:pl-24">
-              <Footer />
+            <div className="relative z-10 flex flex-col min-h-screen w-full">
+              <SideMarquee />
+              <Navbar />
+              <main className="flex-1 pl-10 md:pl-24">{children}</main>
+              <div className="pl-10 md:pl-24">
+                <Footer />
+              </div>
+              <WhatsAppCTA />
             </div>
-            <WhatsAppCTA />
           </SmoothScroll>
         </ThemeProvider>
       </body>

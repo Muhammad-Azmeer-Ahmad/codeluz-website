@@ -60,8 +60,8 @@ export default function ServicesPage() {
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-[#050608] overflow-hidden">
-      <section className="px-8 lg:px-12 max-w-[1300px] mx-auto">
+    <div className="min-h-screen pt-32 pb-20 relative">
+      <section className="px-8 lg:px-12 max-w-[1300px] mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function CaseStudies() {
   return (
-    <section className="bg-[#080911] py-[100px] px-12 border-t border-[#A855F7]/20 relative">
+    <section className="bg-[#080911]/80 backdrop-blur-md py-[100px] px-12 border-t border-[#A855F7]/20 relative">
       <div className="max-w-[1200px] mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

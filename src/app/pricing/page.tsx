@@ -57,7 +57,7 @@ import { useState } from "react";
 export default function PricingPage() {
   const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-background px-8 lg:px-12">
+    <div className="min-h-screen pt-32 pb-20 relative px-8 lg:px-12">
       <section className="max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

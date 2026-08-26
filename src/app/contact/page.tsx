@@ -51,7 +51,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-background">
+    <div className="min-h-screen pt-32 pb-20 relative">
       <section className="px-8 lg:px-12 max-w-[1300px] mx-auto">
         <div className="text-center mb-16">
           <span className="text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#A855F7] mb-3 block">GET IN TOUCH</span>

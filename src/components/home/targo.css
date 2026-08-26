@@ -1,0 +1,345 @@
+.targo-wrapper {
+  background-color: #D3D3D3;
+  color: #3a3a3a;
+  min-height: 100vh;
+}
+
+.targo-wrapper h1,
+.targo-wrapper h2,
+.targo-wrapper h3,
+.targo-wrapper h4,
+.targo-wrapper h5,
+.targo-wrapper h6 {
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.98;
+  color: #2b3033;
+  margin: 0;
+}
+
+.targo-wrapper a {
+  color: #3a3a3a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.targo-wrapper a:hover {
+  color: #000;
+}
+
+/* Section 1 - Hero */
+.targo-hero {
+  min-height: 100svh;
+  background: #D3D3D3;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.targo-hero-video {
+  position: absolute;
+  pointer-events: none;
+  object-fit: contain;
+  height: auto;
+  z-index: 0;
+}
+
+.targo-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70%;
+  background: linear-gradient(90deg, #D3D3D3 0%, #D3D3D3 55%, rgba(211,211,211,0.85) 78%, rgba(211,211,211,0) 100%);
+  z-index: 1;
+}
+
+.targo-nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(20px, 5vw, 56px);
+  padding: clamp(20px, 3vw, 38px) clamp(20px, 4vw, 48px) 0;
+}
+
+.targo-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.targo-logo-icon {
+  width: 38px;
+  height: 38px;
+  background: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.targo-logo-ellipse {
+  width: 20px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
+
+.targo-logo-text {
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 400;
+  color: #111;
+  letter-spacing: -0.5px;
+  text-transform: lowercase;
+}
+
+.targo-nav-links {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+}
+
+.targo-nav-link {
+  font-weight: 700;
+  font-size: clamp(12px, 2.4vw, 15px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.targo-contact-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 14px 26px;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: 700;
+}
+
+.targo-contact-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.targo-hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.targo-hamburger span {
+  width: 22px;
+  height: 2px;
+  background: white;
+}
+
+.targo-mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background: white;
+  padding: 20px;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 99;
+}
+
+.targo-mobile-menu.open {
+  display: flex;
+}
+
+.targo-mobile-link {
+  color: #1a1c1e;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.targo-hero-content {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.targo-h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.targo-h1-line {
+  display: block;
+}
+
+.targo-h1-indent {
+  display: block;
+  margin-left: min(238px, 28vw);
+}
+
+.targo-h1-accent {
+  color: #15BCDF;
+}
+
+.targo-cta-wrapper {
+  padding-left: calc(clamp(20px, 9vw, 118px) + min(238px, 28vw));
+  padding-bottom: min(clamp(36px, 6vw, 80px), 7vh);
+  margin-top: 30px;
+}
+
+.targo-cta {
+  background: #15BCDF;
+  border: 1px solid #0fa3c2;
+  color: #1a1c1e;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 18px 34px;
+  font-size: clamp(13px, 2.2vw, 16px);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+  box-shadow: 0 0 0 1px rgba(21,188,223,0.35), 0 10px 30px -12px rgba(15,163,194,0.6);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.targo-cta-line {
+  width: 22px;
+  height: 1px;
+  background: #1a1c1e;
+  margin-left: 12px;
+}
+
+.targo-cta:hover {
+  background: #3fd0ef;
+  box-shadow: 0 0 0 1px rgba(21,188,223,0.5), 0 12px 36px -10px rgba(15,163,194,0.8);
+}
+
+/* Section 2 - About */
+.targo-about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(180deg, #D3D3D3 0%, #F7F6F8 18%, #F7F6F8 100%);
+  padding: clamp(60px, 10vw, 140px) 0 clamp(30px, 5vw, 70px) clamp(20px, 9vw, 118px);
+}
+
+.targo-about-left {
+  flex: 1 1 420px;
+  min-width: 300px;
+}
+
+.targo-h2 {
+  font-size: clamp(34px, 6.5vw, 72px);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.targo-h2-indent {
+  display: block;
+  margin-left: min(160px, 18vw);
+  color: #15BCDF;
+}
+
+.targo-about-p {
+  max-width: 520px;
+  margin: 32px 0 0 min(160px, 18vw);
+  font-size: clamp(14px, 1.6vw, 17px);
+  line-height: 1.7;
+  color: #6b6f72;
+}
+
+.targo-about-cta-wrapper {
+  margin: 36px 0 0 min(160px, 18vw);
+}
+
+.targo-about-right {
+  flex: 1 1 360px;
+  min-width: 280px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.targo-about-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 644px;
+}
+
+.targo-about-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.targo-about-video-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 644px;
+  height: 100%;
+  background: #15BCDF;
+  mix-blend-mode: hue;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Desktop sizing constraints */
+@media (min-width: 701px) {
+  .targo-hero-video {
+    top: 0;
+    right: -20%;
+    width: 99%;
+  }
+  .targo-h1 {
+    padding: min(clamp(40px, 9vw, 120px), 9vh) 20px min(clamp(24px, 4vw, 44px), 5vh) clamp(20px, 9vw, 118px);
+    font-size: min(clamp(34px, 7.6vw, 80px), 9.2vh);
+  }
+}
+
+/* Mobile overrides */
+@media (max-width: 700px) {
+  .targo-scrim {
+    display: none;
+  }
+  .targo-hero-video {
+    top: 0;
+    left: -12%;
+    width: 119%;
+  }
+  .targo-nav-links, .targo-contact-btn {
+    display: none;
+  }
+  .targo-hamburger {
+    display: flex;
+  }
+  
+  .targo-h1 {
+    margin-top: 360px;
+    padding: 0 20px 28px 20px;
+    font-size: clamp(34px, 10vw, 56px);
+  }
+  .targo-cta-wrapper {
+    padding-left: calc(20px + min(238px, 28vw));
+  }
+}

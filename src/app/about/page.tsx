@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Code2, ShieldCheck, HeartHandshake, CalendarCheck, ArrowRight, Users } from "lucide-react";
 import Link from "next/link";
+import { AboutMeSection } from "@/components/home/AboutMeSection";
 
 export default function AboutPage() {
   return (
@@ -89,6 +90,8 @@ export default function AboutPage() {
           </div>
         </motion.div>
       </section>
+
+      <AboutMeSection />
 
       {/* Our Approach Section */}
       <section className="bg-white text-slate-900 py-24 px-8 lg:px-12">
