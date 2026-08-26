@@ -77,12 +77,7 @@ export function MagneticButton({
           {children}
         </button>
       )}
-<<<<<<< HEAD
-      
       {/* Subtle border tracing glow that follows the button when hovered */}
-=======
-
->>>>>>> 90457f2e75a07c04f676d3614b97720224aed679
       {isHovered && (
         <div className="absolute inset-0 z-0 bg-[#D4AF37]/20 blur-xl rounded-full scale-110 pointer-events-none animate-pulse" />
       )}
