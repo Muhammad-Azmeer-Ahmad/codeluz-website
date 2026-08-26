@@ -137,7 +137,7 @@ export function HeroSection() {
 
             <MagneticButton
               href="/contact"
-              className="group inline-flex items-center gap-2.5 bg-[#D4AF37] hover:bg-[#c9a430] text-black font-heading font-bold text-sm sm:text-base tracking-widest uppercase px-6 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:shadow-[0_0_55px_rgba(212,175,55,0.5)] transition-all duration-300"
+              className="group inline-flex items-center gap-2.5 bg-white hover:bg-slate-100 text-black font-heading font-bold text-sm sm:text-base tracking-widest uppercase px-6 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_55px_rgba(255,255,255,0.4)] transition-all duration-300"
             >
               Get a Quote
               <ArrowRight

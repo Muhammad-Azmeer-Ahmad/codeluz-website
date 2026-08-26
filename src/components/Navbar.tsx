@@ -133,7 +133,7 @@ export function Navbar() {
             </button>
             <Link
               href="/contact"
-              className="hidden md:inline-flex items-center gap-1.5 bg-[#D4AF37] hover:bg-[#c9a430] text-black font-heading font-bold text-[0.78rem] tracking-widest uppercase px-6 py-2.5 rounded-full shadow-[0_0_15px_rgba(212,175,55,0.25)] hover:shadow-[0_0_25px_rgba(212,175,55,0.45)] hover:-translate-y-0.5 transition-all duration-300"
+              className="hidden md:inline-flex items-center gap-1.5 bg-white hover:bg-slate-100 text-black font-heading font-bold text-[0.78rem] tracking-widest uppercase px-6 py-2.5 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 transition-all duration-300"
             >
               Get a Quote
             </Link>
@@ -185,7 +185,7 @@ export function Navbar() {
             <div className="mt-auto pt-8 border-t border-white/10 flex flex-col gap-4">
               <Link
                 href="/contact"
-                className="w-full flex items-center justify-center gap-1.5 bg-[#D4AF37] text-black font-heading font-bold text-sm tracking-widest uppercase px-6 py-4 rounded-xl shadow-[0_0_15px_rgba(212,175,55,0.25)]"
+                className="w-full flex items-center justify-center gap-1.5 bg-white hover:bg-slate-100 text-black font-heading font-bold text-sm tracking-widest uppercase px-6 py-4 rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all"
               >
                 Get a Quote
               </Link>

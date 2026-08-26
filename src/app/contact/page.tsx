@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Loader2, Send } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const fieldVariants = {
   rest: { scale: 1 },
@@ -12,6 +12,15 @@ const fieldVariants = {
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [selectedPlan, setSelectedPlan] = useState("custom");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get("plan");
+    if (plan && ["launch", "business", "enterprise"].includes(plan.toLowerCase())) {
+      setSelectedPlan(plan.toLowerCase());
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -166,20 +175,59 @@ export default function ContactPage() {
                 </motion.div>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label className="text-slate-400 text-sm font-semibold tracking-wide">What Do You Need?</label>
-                <motion.select
-                  name="serviceType" required
-                  whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors appearance-none"
-                >
-                  <option value="landing">Landing Page</option>
-                  <option value="business">Business Website</option>
-                  <option value="booking">Booking-Enabled Website</option>
-                  <option value="speed">Speed Optimization</option>
-                  <option value="not-sure">Not Sure Yet</option>
-                </motion.select>
+              <div className="flex flex-col gap-2 mt-2">
+                <label className="text-slate-400 text-sm font-semibold tracking-wide flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
+                  Selected Plan
+                </label>
+                <div className="relative">
+                  <motion.select
+                    name="plan" required
+                    value={selectedPlan}
+                    onChange={(e) => setSelectedPlan(e.target.value)}
+                    whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(212,175,55,0.25)" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="w-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 text-white rounded-lg px-5 py-4 focus:outline-none focus:border-[#D4AF37] transition-colors appearance-none cursor-pointer text-base"
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23D4AF37'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "right 1.2rem center",
+                      backgroundSize: "1.2rem",
+                    }}
+                  >
+                    <option value="custom" className="bg-[#0c0e14]">Custom / Not Sure</option>
+                    <option value="launch" className="bg-[#0c0e14]">Launch ($80)</option>
+                    <option value="business" className="bg-[#0c0e14]">Business ($150)</option>
+                    <option value="enterprise" className="bg-[#0c0e14]">Enterprise ($300)</option>
+                  </motion.select>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2 mt-2">
+                <label className="text-slate-400 text-sm font-semibold tracking-wide flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#A855F7]" />
+                  What Do You Need?
+                </label>
+                <div className="relative">
+                  <motion.select
+                    name="serviceType" required
+                    whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="w-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 text-white rounded-lg px-5 py-4 focus:outline-none focus:border-[#A855F7] transition-colors appearance-none cursor-pointer text-base"
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23A855F7'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "right 1.2rem center",
+                      backgroundSize: "1.2rem",
+                    }}
+                  >
+                    <option value="landing" className="bg-[#0c0e14]">Landing Page</option>
+                    <option value="business" className="bg-[#0c0e14]">Business Website</option>
+                    <option value="booking" className="bg-[#0c0e14]">Booking-Enabled Website</option>
+                    <option value="speed" className="bg-[#0c0e14]">Speed Optimization</option>
+                    <option value="not-sure" className="bg-[#0c0e14]">Not Sure Yet</option>
+                  </motion.select>
+                </div>
               </div>
 
               <div className="flex flex-col gap-2">

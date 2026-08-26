@@ -32,7 +32,54 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
+<style>
+  /* Fixed Floating Demo Badge - Bottom Left Corner */
+  .codeluz-demo-badge {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #0a0a0f;
+    color: #ffffff !important;
+    border: 2px solid #00F0FF;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none !important;
+    letter-spacing: 0.03em;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .codeluz-demo-badge:hover {
+    background: #00F0FF;
+    color: #000000 !important;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 14px 35px rgba(0, 240, 255, 0.5);
+  }
+
+  .codeluz-demo-badge i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .codeluz-demo-badge:hover i {
+    transform: translateX(-4px);
+  }
+</style>
+
 <body>
+    <!-- ***** Large Floating Demo Return Button ***** -->
+    <a href="/" class="codeluz-demo-badge">
+      <i class="fa fa-arrow-left"></i> 
+      <span>Back to Codeluz</span>
+    </a>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">

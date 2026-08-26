@@ -19,7 +19,6 @@ const plans = [
       "Speed-optimized build",
       "2 rounds of revisions",
     ],
-    highlight: false,
   },
   {
     name: "Business",
@@ -35,7 +34,6 @@ const plans = [
       "3 rounds of revisions",
       "Everything in Launch",
     ],
-    highlight: true,
   },
   {
     name: "Enterprise",
@@ -51,11 +49,13 @@ const plans = [
       "5 rounds of revisions",
       "Everything in Business",
     ],
-    highlight: false,
   },
 ];
 
+import { useState } from "react";
+
 export default function PricingPage() {
+  const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
   return (
     <div className="min-h-screen pt-32 pb-20 bg-[#050608] px-8 lg:px-12">
       <section className="max-w-[1200px] mx-auto">
@@ -77,23 +77,27 @@ export default function PricingPage() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {plans.map((plan, i) => (
+          {plans.map((plan, i) => {
+            const isHighlighted = hoveredPlan === plan.name;
+            return (
             <motion.div
               key={plan.name}
+              onMouseEnter={() => setHoveredPlan(plan.name)}
+              onMouseLeave={() => setHoveredPlan(null)}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.12 }}
               whileHover={{ y: -6 }}
-              className={`rounded-2xl p-8 flex flex-col ${
-                plan.highlight
-                  ? "bg-[#13141F] border-2 border-[#D4AF37] shadow-[0_0_40px_-10px_rgba(212,175,55,0.3)]"
-                  : "bg-[#0c0e14] border border-white/10"
+              className={`rounded-2xl p-8 flex flex-col transition-all duration-300 ${
+                isHighlighted
+                  ? "bg-[#13141F] border-2 border-[#D4AF37] shadow-[0_0_40px_-10px_rgba(212,175,55,0.3)] scale-105 z-10"
+                  : "bg-[#0c0e14] border border-white/10 opacity-70 scale-100"
               }`}
             >
-              {plan.highlight && (
+              {isHighlighted && (
                 <span className="text-[0.7rem] font-bold uppercase tracking-widest text-[#D4AF37] mb-3">
-                  Most Popular
+                  Selected Plan
                 </span>
               )}
               <h3 className="text-2xl font-heading font-bold text-white mb-1">{plan.name}</h3>
@@ -114,9 +118,9 @@ export default function PricingPage() {
                 ))}
               </ul>
               <Link
-                href="/contact"
+                href={`/contact?plan=${plan.name.toLowerCase()}`}
                 className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-heading font-bold text-sm tracking-widest uppercase transition-all ${
-                  plan.highlight
+                  isHighlighted
                     ? "bg-[#D4AF37] hover:bg-[#c9a430] text-black shadow-[0_0_25px_rgba(212,175,55,0.35)]"
                     : "bg-white/10 hover:bg-white/20 text-white"
                 }`}
@@ -124,7 +128,7 @@ export default function PricingPage() {
                 Get Started <ArrowRight size={16} />
               </Link>
             </motion.div>
-          ))}
+          )})}
         </div>
 
         {/* Custom Requirements + Mobile App Section */}
