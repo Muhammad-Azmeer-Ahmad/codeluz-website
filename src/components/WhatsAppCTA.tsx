@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const WHATSAPP_NUMBER = "+923274644729";
-const WHATSAPP_MESSAGE = "Hi! I'm interested in getting a custom website built by Codeluz.";
+const WHATSAPP_MESSAGE = "Hello, I am looking for professional web development services to elevate my brand's online presence. I would like to discuss how Codeluz can help bring this vision to life.";
 
 export function WhatsAppCTA() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
