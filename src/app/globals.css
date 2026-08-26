@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-display: var(--font-outfit), -apple-system, sans-serif;
-  --font-heading: var(--font-jakarta), -apple-system, sans-serif;
-  --font-body: var(--font-inter), -apple-system, sans-serif;
+  --font-heading: 'Instrument Serif', serif;
+  --font-body: 'Barlow', sans-serif;
   
   --color-brand-cyan: #00F0FF;
   --color-brand-purple: #A855F7;
@@ -95,5 +96,38 @@
   }
   .btn-green-outline {
     @apply bg-transparent text-[#00FF88] border border-[#00FF88] font-heading font-bold text-sm tracking-widest uppercase px-6 py-3.5 rounded-full shadow-[0_0_15px_rgba(0,255,136,0.15)] transition-all duration-300 hover:bg-[#00FF88] hover:text-black hover:shadow-[0_0_30px_rgba(0,255,136,0.5)] hover:-translate-y-1 flex items-center justify-center gap-2.5 whitespace-nowrap;
+  }
+
+  .liquid-glass-strong {
+    background: rgba(255, 255, 255, 0.01);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border: none;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05),
+      inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-glass-strong::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.4px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0.2) 80%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
   }
 }
