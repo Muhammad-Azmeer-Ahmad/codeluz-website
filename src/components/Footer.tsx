@@ -4,30 +4,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer id="our-story" className="bg-black border-t border-white/10 pt-20 pb-10 px-12 mt-auto">
-
-      {/* Our Story Section */}
-      <div className="max-w-[900px] mx-auto mb-20 text-center">
-        <span className="text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#00FF88] mb-3 block">OUR STORY</span>
-        <h3 className="font-heading text-3xl md:text-4xl font-extrabold text-white mb-6">
-          Why We Started Codeluz
-        </h3>
-        <p className="text-slate-400 text-[1.05rem] leading-relaxed max-w-[720px] mx-auto">
-          Codeluz started with a simple observation: most small businesses either have no website at all,
-          or one that was thrown together from a template and never touched again. We wanted to do it
-          differently — build every site by hand, with real attention to how it actually gets used.
-        </p>
-        <p className="text-slate-400 text-[1.05rem] leading-relaxed max-w-[720px] mx-auto mt-4">
-          Our background isn&apos;t just design — it&apos;s hands-on software development and security research,
-          including ongoing work in penetration testing and studying how systems actually get attacked
-          so we can build sites that hold up. That same care carries into every project: code written
-          properly, checked carefully, and built to last past launch day.
-        </p>
-        <p className="text-slate-400 text-[1.05rem] leading-relaxed max-w-[720px] mx-auto mt-4">
-          We&apos;re still early — every client we take on gets our full attention, not a fraction of it
-          split across a big team. That&apos;s the trade we&apos;re making, and we think it shows in the work.
-        </p>
-      </div>
+    <footer className="bg-black border-t border-white/10 pt-20 pb-10 px-12 mt-auto">
 
       <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
         {/* Brand Col */}
@@ -51,7 +28,6 @@ export function Footer() {
             <li><Link href="/services" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Services</Link></li>
             <li><Link href="/pricing" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Pricing</Link></li>
             <li><Link href="/contact" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Contact Us</Link></li>
-            <li><Link href="#our-story" className="text-slate-400 hover:text-[#00FF88] transition-colors text-sm">Our Story</Link></li>
           </ul>
         </div>
         {/* Demos Col */}
