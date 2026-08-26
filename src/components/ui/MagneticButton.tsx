@@ -44,9 +44,6 @@ export function MagneticButton({ children, className = "", onClick, href }: Magn
     });
   };
 
-  const Component = href ? "a" : "button";
-  const props = href ? { href } : { onClick };
-
   return (
     <div
       className="relative inline-block"
@@ -54,14 +51,23 @@ export function MagneticButton({ children, className = "", onClick, href }: Magn
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
     >
-      {/* @ts-ignore */}
-      <Component
-        ref={buttonRef}
-        className={`relative z-10 ${className}`}
-        {...props}
-      >
-        {children}
-      </Component>
+      {href ? (
+        <a
+          ref={buttonRef as React.RefObject<HTMLAnchorElement>}
+          href={href}
+          className={`relative z-10 ${className}`}
+        >
+          {children}
+        </a>
+      ) : (
+        <button
+          ref={buttonRef as React.RefObject<HTMLButtonElement>}
+          onClick={onClick}
+          className={`relative z-10 ${className}`}
+        >
+          {children}
+        </button>
+      )}
       
       {/* Subtle border tracing glow that follows the button when hovered */}
       {isHovered && (
