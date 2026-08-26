@@ -31,8 +31,8 @@ export function SocialProof() {
   return (
     <>
       {/* ── Process Section ── */}
-      <section className="bg-[#080810] py-20 md:py-32 px-6 relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <section className="bg-card-alt py-20 md:py-32 px-6 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
         <div className="max-w-[1100px] mx-auto">
           <motion.div
@@ -46,7 +46,7 @@ export function SocialProof() {
               How We Work
             </p>
 
-            <h2 className="font-display text-4xl md:text-[2.75rem] font-bold text-white leading-tight tracking-tight">
+            <h2 className="font-display text-4xl md:text-[2.75rem] font-bold text-foreground leading-tight tracking-tight">
               A simple process from{" "}
               <span style={{ color: "#D4AF37" }}>idea to launch</span>
             </h2>
@@ -68,18 +68,18 @@ export function SocialProof() {
               >
                 {/* Connector line */}
                 {i < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-6 left-[calc(100%_-_12px)] w-full h-px bg-gradient-to-r from-white/20 to-transparent -z-0" />
+                  <div className="hidden lg:block absolute top-6 left-[calc(100%_-_12px)] w-full h-px bg-gradient-to-r from-border to-transparent -z-0" />
                 )}
 
-                <div className="font-display text-[3.5rem] font-black text-white/[0.05] leading-none mb-4 select-none">
+                <div className="font-display text-[3.5rem] font-black text-black/5 dark:text-white/5 leading-none mb-4 select-none">
                   {item.step}
                 </div>
 
-                <h4 className="text-white font-heading font-semibold text-lg mb-2">
+                <h4 className="text-foreground font-heading font-semibold text-lg mb-2">
                   {item.title}
                 </h4>
 
-                <p className="text-slate-500 text-[0.9rem] leading-relaxed font-body">
+                <p className="text-muted text-[0.9rem] leading-relaxed font-body">
                   {item.desc}
                 </p>
               </motion.div>
@@ -89,8 +89,8 @@ export function SocialProof() {
       </section>
 
       {/* ── CTA Banner ── */}
-      <section className="bg-[#06070d] py-16 md:py-24 px-6 relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <section className="bg-card py-16 md:py-24 px-6 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
         <div className="max-w-[900px] mx-auto text-center">
           <motion.div
@@ -108,7 +108,7 @@ export function SocialProof() {
               </span>
             </div>
 
-            <h2 className="font-display text-4xl md:text-[3.5rem] font-bold text-white leading-tight tracking-[-0.02em] mb-6">
+            <h2 className="font-display text-4xl md:text-[3.5rem] font-bold text-foreground leading-tight tracking-[-0.02em] mb-6">
               Ready to build a website{" "}
               <span
                 className="text-transparent bg-clip-text"
@@ -123,7 +123,7 @@ export function SocialProof() {
               </span>
             </h2>
 
-            <p className="text-slate-400 text-lg font-body mb-10 max-w-[580px] mx-auto leading-relaxed">
+            <p className="text-muted text-lg font-body mb-10 max-w-[580px] mx-auto leading-relaxed">
               Tell us what you need, and we'll discuss your goals, recommend
               the right approach, and provide a clear quote for your project.
             </p>
@@ -142,7 +142,7 @@ export function SocialProof() {
 
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white/70 hover:text-white text-sm font-semibold tracking-wide px-8 py-4 rounded-full transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-border hover:border-foreground/30 text-muted hover:text-foreground text-sm font-semibold tracking-wide px-8 py-4 rounded-full transition-all duration-300"
               >
                 View Our Services
               </Link>

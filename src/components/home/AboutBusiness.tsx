@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function AboutBusiness() {
   return (
-    <section className="bg-white py-[120px] px-12 relative overflow-hidden">
+    <section className="bg-background py-[120px] px-12 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center">
         
         {/* Content Column */}
@@ -21,27 +21,27 @@ export function AboutBusiness() {
             AVAILABLE FOR NEW PROJECTS
           </div>
 
-          <h2 className="font-heading text-4xl md:text-[3rem] font-extrabold text-slate-900 mb-3 leading-tight">
+          <h2 className="font-heading text-4xl md:text-[3rem] font-extrabold text-foreground mb-3 leading-tight">
             Websites Built For <span className="text-[#D4AF37]">Your Business</span>
           </h2>
 
-          <p className="text-slate-500 font-semibold text-[1rem] mb-6">
+          <p className="text-muted font-semibold text-[1rem] mb-6">
             Codeluz — Custom Web Development
           </p>
 
-          <p className="text-slate-600 text-[1.15rem] leading-[1.85] mb-9 font-body max-w-[540px]">
+          <p className="text-muted text-[1.15rem] leading-[1.85] mb-9 font-body max-w-[540px]">
             We build custom, professional websites for growing businesses — designed around how you actually operate, not a generic template. Every project is built with care, from first conversation to launch.
           </p>
 
           {/* Tag Pills */}
           <div className="flex flex-wrap gap-2.5 mb-9">
-            <span className="px-4 py-1.5 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold tracking-wide border border-slate-200">
+            <span className="px-4 py-1.5 rounded-full bg-black/5 dark:bg-white/5 text-foreground text-xs font-semibold tracking-wide border border-black/10 dark:border-white/10">
               Custom-Built
             </span>
-            <span className="px-4 py-1.5 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold tracking-wide border border-slate-200">
+            <span className="px-4 py-1.5 rounded-full bg-black/5 dark:bg-white/5 text-foreground text-xs font-semibold tracking-wide border border-black/10 dark:border-white/10">
               Security-Conscious
             </span>
-            <span className="px-4 py-1.5 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold tracking-wide border border-slate-200">
+            <span className="px-4 py-1.5 rounded-full bg-black/5 dark:bg-white/5 text-foreground text-xs font-semibold tracking-wide border border-black/10 dark:border-white/10">
               Direct Support
             </span>
           </div>
@@ -65,9 +65,9 @@ export function AboutBusiness() {
           <motion.div
             whileHover={{ y: -6 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative bg-slate-900 p-10 rounded-3xl border border-slate-800 shadow-[0_30px_70px_rgba(0,0,0,0.35)]"
+            className="relative bg-card-alt p-10 rounded-3xl border border-border shadow-[0_30px_70px_rgba(0,0,0,0.35)]"
           >
-            <div className="flex items-center gap-4 mb-8 border-b border-slate-700/60 pb-6">
+            <div className="flex items-center gap-4 mb-8 border-b border-border pb-6">
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
@@ -78,8 +78,8 @@ export function AboutBusiness() {
                 <Users size={26} />
               </motion.div>
               <div>
-                <div className="font-heading font-extrabold text-white leading-none text-2xl mb-1.5">Codeluz</div>
-                <div className="text-sm text-slate-400 font-medium">Web Development Team</div>
+                <div className="font-heading font-extrabold text-foreground leading-none text-2xl mb-1.5">Codeluz</div>
+                <div className="text-sm text-muted font-medium">Web Development Team</div>
               </div>
             </div>
 
@@ -95,15 +95,15 @@ export function AboutBusiness() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 + i * 0.1, duration: 0.4 }}
-                  className={`py-2 ${i === 1 ? "border-x border-slate-700/60" : ""}`}
+                  className={`py-2 ${i === 1 ? "border-x border-border" : ""}`}
                 >
-                  <div className="font-bold text-base text-white mb-1">{item.label}</div>
-                  <div className="text-[0.78rem] text-slate-400 font-medium">{item.sub}</div>
+                  <div className="font-bold text-base text-foreground mb-1">{item.label}</div>
+                  <div className="text-[0.78rem] text-muted font-medium">{item.sub}</div>
                 </motion.div>
               ))}
             </div>
 
-            <p className="text-slate-400 text-sm leading-relaxed border-t border-slate-700/60 pt-6">
+            <p className="text-muted text-sm leading-relaxed border-t border-border pt-6">
               Every project is handled directly by the people building it — no account managers, no outsourcing, just two people who care about the outcome.
             </p>
           </motion.div>

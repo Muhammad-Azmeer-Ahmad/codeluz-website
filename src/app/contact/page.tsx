@@ -51,14 +51,14 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-[#050608]">
+    <div className="min-h-screen pt-32 pb-20 bg-background">
       <section className="px-8 lg:px-12 max-w-[1300px] mx-auto">
         <div className="text-center mb-16">
           <span className="text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#A855F7] mb-3 block">GET IN TOUCH</span>
-          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-white mb-6">
+          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-foreground mb-6">
             Let's Talk About Your Website.
           </h1>
-          <p className="text-slate-400 text-lg max-w-[700px] mx-auto font-body">
+          <p className="text-muted text-lg max-w-[700px] mx-auto font-body">
             Tell us a bit about your business and what you need — we'll get back to you to book a quick call and figure out the best fit.
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function ContactPage() {
             className="flex flex-col gap-10"
           >
             <div>
-              <h3 className="text-xl font-heading font-bold text-white mb-6">Reach Us Directly</h3>
+              <h3 className="text-xl font-heading font-bold text-foreground mb-6">Reach Us Directly</h3>
 
               <div className="flex flex-col gap-6">
                 {[
@@ -102,8 +102,8 @@ export default function ContactPage() {
                       {item.icon}
                     </motion.div>
                     <div>
-                      <strong className="block text-white font-heading tracking-wide">{item.label}</strong>
-                      <span className="text-slate-400 font-body">{item.value}</span>
+                      <strong className="block text-foreground font-heading tracking-wide">{item.label}</strong>
+                      <span className="text-muted font-body">{item.value}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -111,13 +111,13 @@ export default function ContactPage() {
             </div>
 
             <motion.div
-              className="bg-[#0c0e14] border border-white/10 rounded-2xl p-6"
+              className="bg-card border border-border rounded-2xl p-6"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               whileHover={{ borderColor: "rgba(168,85,247,0.4)", boxShadow: "0 0 30px -10px rgba(168,85,247,0.35)" }}
             >
-              <p className="text-slate-400 text-sm font-body leading-relaxed">
+              <p className="text-muted text-sm font-body leading-relaxed">
                 Prefer to talk it through first? Message us on WhatsApp or email and we'll set up a quick call — no pressure, just a conversation about what you need.
               </p>
             </motion.div>
@@ -128,10 +128,10 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-[#0c0e14] border border-white/10 rounded-3xl p-8 lg:p-12 shadow-2xl"
+            className="bg-card border border-border rounded-3xl p-8 lg:p-12 shadow-2xl"
           >
             <motion.h3
-              className="text-2xl font-heading font-bold text-white mb-8"
+              className="text-2xl font-heading font-bold text-foreground mb-8"
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
@@ -142,41 +142,41 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <motion.div className="flex flex-col gap-2" variants={fieldVariants} whileFocus="focus" whileHover="focus" initial="rest">
-                  <label className="text-slate-400 text-sm font-semibold tracking-wide">Full Name</label>
+                  <label className="text-muted text-sm font-semibold tracking-wide">Full Name</label>
                   <motion.input
                     type="text" name="name" required
                     whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
+                    className="bg-background border border-border text-foreground rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
                     placeholder="Enter your full name"
                   />
                 </motion.div>
                 <motion.div className="flex flex-col gap-2">
-                  <label className="text-slate-400 text-sm font-semibold tracking-wide">Email Address</label>
+                  <label className="text-muted text-sm font-semibold tracking-wide">Email Address</label>
                   <motion.input
                     type="email" name="email" required
                     whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
+                    className="bg-background border border-border text-foreground rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
                     placeholder="name@company.com"
                   />
                 </motion.div>
                 <motion.div className="flex flex-col gap-2">
-                  <label className="text-slate-400 text-sm font-semibold tracking-wide">Phone / WhatsApp</label>
+                  <label className="text-muted text-sm font-semibold tracking-wide">Phone / WhatsApp</label>
                   <motion.input
                     type="tel" name="phone" required
                     pattern="^\+?[0-9\s\-\(\)]{7,20}$"
                     title="Enter a valid phone number"
                     whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
+                    className="bg-background border border-border text-foreground rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors"
                     placeholder="+92 300 1234567"
                   />
                 </motion.div>
               </div>
 
               <div className="flex flex-col gap-2 mt-2">
-                <label className="text-slate-400 text-sm font-semibold tracking-wide flex items-center gap-2">
+                <label className="text-muted text-sm font-semibold tracking-wide flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
                   Selected Plan
                 </label>
@@ -187,7 +187,7 @@ export default function ContactPage() {
                     onChange={(e) => setSelectedPlan(e.target.value)}
                     whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(212,175,55,0.25)" }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="w-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 text-white rounded-lg px-5 py-4 focus:outline-none focus:border-[#D4AF37] transition-colors appearance-none cursor-pointer text-base"
+                    className="w-full bg-background hover:bg-black/5 dark:hover:bg-white/[0.05] border border-border text-foreground rounded-lg px-5 py-4 focus:outline-none focus:border-[#D4AF37] transition-colors appearance-none cursor-pointer text-base"
                     style={{
                       backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23D4AF37'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                       backgroundRepeat: "no-repeat",
@@ -195,16 +195,16 @@ export default function ContactPage() {
                       backgroundSize: "1.2rem",
                     }}
                   >
-                    <option value="custom" className="bg-[#0c0e14]">Custom / Not Sure</option>
-                    <option value="launch" className="bg-[#0c0e14]">Launch ($80)</option>
-                    <option value="business" className="bg-[#0c0e14]">Business ($150)</option>
-                    <option value="enterprise" className="bg-[#0c0e14]">Enterprise ($300)</option>
+                    <option value="custom" className="bg-card">Custom / Not Sure</option>
+                    <option value="launch" className="bg-card">Launch ($80)</option>
+                    <option value="business" className="bg-card">Business ($150)</option>
+                    <option value="enterprise" className="bg-card">Enterprise ($300)</option>
                   </motion.select>
                 </div>
               </div>
 
               <div className="flex flex-col gap-2 mt-2">
-                <label className="text-slate-400 text-sm font-semibold tracking-wide flex items-center gap-2">
+                <label className="text-muted text-sm font-semibold tracking-wide flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#A855F7]" />
                   What Do You Need?
                 </label>
@@ -213,7 +213,7 @@ export default function ContactPage() {
                     name="serviceType" required
                     whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="w-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 text-white rounded-lg px-5 py-4 focus:outline-none focus:border-[#A855F7] transition-colors appearance-none cursor-pointer text-base"
+                    className="w-full bg-background hover:bg-black/5 dark:hover:bg-white/[0.05] border border-border text-foreground rounded-lg px-5 py-4 focus:outline-none focus:border-[#A855F7] transition-colors appearance-none cursor-pointer text-base"
                     style={{
                       backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23A855F7'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                       backgroundRepeat: "no-repeat",
@@ -221,22 +221,22 @@ export default function ContactPage() {
                       backgroundSize: "1.2rem",
                     }}
                   >
-                    <option value="landing" className="bg-[#0c0e14]">Landing Page</option>
-                    <option value="business" className="bg-[#0c0e14]">Business Website</option>
-                    <option value="booking" className="bg-[#0c0e14]">Booking-Enabled Website</option>
-                    <option value="speed" className="bg-[#0c0e14]">Speed Optimization</option>
-                    <option value="not-sure" className="bg-[#0c0e14]">Not Sure Yet</option>
+                    <option value="landing" className="bg-card">Landing Page</option>
+                    <option value="business" className="bg-card">Business Website</option>
+                    <option value="booking" className="bg-card">Booking-Enabled Website</option>
+                    <option value="speed" className="bg-card">Speed Optimization</option>
+                    <option value="not-sure" className="bg-card">Not Sure Yet</option>
                   </motion.select>
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-slate-400 text-sm font-semibold tracking-wide">Tell Us About Your Business</label>
+                <label className="text-muted text-sm font-semibold tracking-wide">Tell Us About Your Business</label>
                 <motion.textarea
                   name="details" required rows={4}
                   whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(168,85,247,0.25)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="bg-black/50 border border-white/10 text-white rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors resize-none"
+                  className="bg-background border border-border text-foreground rounded-lg px-5 py-3.5 focus:outline-none focus:border-[#A855F7] transition-colors resize-none"
                   placeholder="What does your business do, and what do you need help with?"
                 />
               </div>

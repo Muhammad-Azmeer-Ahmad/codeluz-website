@@ -40,7 +40,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[100dvh] flex items-center justify-center bg-[#020204] overflow-hidden pt-20 pb-20">
+    <section className="relative w-full min-h-[100dvh] flex items-center justify-center bg-background overflow-hidden pt-20 pb-20">
       
       {/* Background Lighting & Noise */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
@@ -78,7 +78,7 @@ export function HeroSection() {
         <div className="hero-element mb-6 sm:mb-8 opacity-0">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 sm:gap-2.5 bg-white/[0.04] border border-white/[0.1] hover:border-[#D4AF37]/50 text-white/70 hover:text-white text-[0.75rem] sm:text-[0.8rem] font-semibold tracking-wide px-4 py-2 rounded-full transition-all duration-300 group backdrop-blur-md"
+            className="inline-flex items-center gap-2 sm:gap-2.5 bg-black/5 dark:bg-white/[0.04] border border-border hover:border-[#D4AF37]/50 text-muted hover:text-foreground text-[0.75rem] sm:text-[0.8rem] font-semibold tracking-wide px-4 py-2 rounded-full transition-all duration-300 group backdrop-blur-md"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
             Custom Web Development Agency
@@ -91,7 +91,7 @@ export function HeroSection() {
 
         {/* Main Headline */}
         <h1
-          className="hero-element font-display font-bold text-white leading-[1.05] tracking-[-0.03em] mb-6 drop-shadow-2xl opacity-0"
+          className="hero-element font-display font-bold text-foreground leading-[1.05] tracking-[-0.03em] mb-6 drop-shadow-2xl opacity-0"
           style={{ fontSize: "clamp(2.1rem, 8vw, 6rem)" }}
         >
           Websites Built For <br />
@@ -113,7 +113,7 @@ export function HeroSection() {
         </h1>
 
         {/* Subtitle */}
-        <p className="hero-element max-w-[540px] sm:max-w-[650px] text-[0.95rem] sm:text-[1.15rem] text-white/60 leading-relaxed font-body mb-10 sm:mb-12 opacity-0">
+        <p className="hero-element max-w-[540px] sm:max-w-[650px] text-[0.95rem] sm:text-[1.15rem] text-muted leading-relaxed font-body mb-10 sm:mb-12 opacity-0">
           We don&apos;t just build websites. We engineer high-performance digital platforms that present your services, reach more customers, and drive action at every layer.
         </p>
 
@@ -137,7 +137,7 @@ export function HeroSection() {
 
             <MagneticButton
               href="/contact"
-              className="group inline-flex items-center gap-2.5 bg-white hover:bg-slate-100 text-black font-heading font-bold text-sm sm:text-base tracking-widest uppercase px-6 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_55px_rgba(255,255,255,0.4)] transition-all duration-300"
+              className="group inline-flex items-center gap-2.5 bg-foreground hover:opacity-90 text-background font-heading font-bold text-sm sm:text-base tracking-widest uppercase px-6 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_55px_rgba(255,255,255,0.4)] transition-all duration-300"
             >
               Get a Quote
               <ArrowRight
@@ -149,7 +149,7 @@ export function HeroSection() {
 
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm sm:text-base font-semibold tracking-wide transition-colors duration-200 group"
+            className="inline-flex items-center gap-2 text-muted hover:text-foreground text-sm sm:text-base font-semibold tracking-wide transition-colors duration-200 group"
           >
             View Our Services
             <ChevronRight

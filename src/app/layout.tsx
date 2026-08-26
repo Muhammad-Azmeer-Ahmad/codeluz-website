@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { SideMarquee } from "@/components/SideMarquee";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -48,17 +49,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable} ${outfit.variable} dark`}>
-      <body className="bg-black text-slate-200 antialiased font-body min-h-screen flex flex-col">
-        <SmoothScroll>
-          <SideMarquee />
-          <Navbar />
-          <main className="flex-1 pl-10 md:pl-24">{children}</main>
-          <div className="pl-10 md:pl-24">
-            <Footer />
-          </div>
-          <WhatsAppCTA />
-        </SmoothScroll>
+    <html lang="en" className={`${inter.variable} ${jakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
+      <body className="bg-black text-slate-200 antialiased font-body min-h-screen flex flex-col selection:bg-[#00F0FF]/30 selection:text-white">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <SmoothScroll>
+            <SideMarquee />
+            <Navbar />
+            <main className="flex-1 pl-10 md:pl-24">{children}</main>
+            <div className="pl-10 md:pl-24">
+              <Footer />
+            </div>
+            <WhatsAppCTA />
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );

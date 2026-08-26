@@ -55,7 +55,7 @@ const cardVariants = {
 
 export function FeaturesGrid() {
   return (
-    <section className="bg-[#06070d] py-20 md:py-32 px-6 relative">
+    <section className="bg-card py-20 md:py-32 px-6 relative">
 
 
       <div className="max-w-[1100px] mx-auto">
@@ -72,7 +72,7 @@ export function FeaturesGrid() {
           </p>
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="font-display text-4xl md:text-[2.75rem] font-bold text-white leading-tight tracking-tight max-w-[520px]">
+            <h2 className="font-display text-4xl md:text-[2.75rem] font-bold text-foreground leading-tight tracking-tight max-w-[520px]">
               Built around your{" "}
               <span
                 className="text-transparent bg-clip-text"
@@ -87,7 +87,7 @@ export function FeaturesGrid() {
               </span>
             </h2>
 
-            <p className="text-slate-400 text-[1rem] leading-relaxed max-w-[360px] md:text-right font-body">
+            <p className="text-muted text-[1rem] leading-relaxed max-w-[360px] md:text-right font-body">
               We create practical websites that look professional, work
               properly, and make it easier for customers to connect with your
               business.
@@ -96,7 +96,7 @@ export function FeaturesGrid() {
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border border-border">
           {features.map((item, i) => (
             <motion.div
               key={i}
@@ -105,8 +105,7 @@ export function FeaturesGrid() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
-              whileHover={{ backgroundColor: "rgba(255,255,255,0.03)" }}
-              className="bg-[#06070d] p-8 group cursor-default transition-colors"
+              className="bg-card p-8 group cursor-default transition-colors hover:bg-black/5 dark:hover:bg-white/[0.03]"
             >
               <div
                 className="w-10 h-10 rounded-lg flex items-center justify-center mb-5 transition-transform duration-300 group-hover:-translate-y-0.5"
@@ -119,11 +118,11 @@ export function FeaturesGrid() {
                 {item.icon}
               </div>
 
-              <h4 className="text-white font-heading font-semibold text-[1.05rem] mb-2.5">
+              <h4 className="text-foreground font-heading font-semibold text-[1.05rem] mb-2.5">
                 {item.title}
               </h4>
 
-              <p className="text-slate-500 text-[0.9rem] leading-relaxed font-body">
+              <p className="text-muted text-[0.9rem] leading-relaxed font-body">
                 {item.desc}
               </p>
             </motion.div>
