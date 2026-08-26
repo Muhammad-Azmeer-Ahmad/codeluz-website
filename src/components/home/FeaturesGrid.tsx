@@ -55,7 +55,7 @@ const cardVariants = {
 
 export function FeaturesGrid() {
   return (
-    <section className="bg-[#06070d] py-32 px-6 relative">
+    <section className="bg-[#06070d] py-20 md:py-32 px-6 relative">
 
 
       <div className="max-w-[1100px] mx-auto">

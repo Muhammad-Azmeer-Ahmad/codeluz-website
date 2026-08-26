@@ -53,8 +53,8 @@ export default function RootLayout({
         <SmoothScroll>
           <SideMarquee />
           <Navbar />
-          <main className="flex-1 pl-20 md:pl-24">{children}</main>
-          <div className="pl-20 md:pl-24">
+          <main className="flex-1 pl-10 md:pl-24">{children}</main>
+          <div className="pl-10 md:pl-24">
             <Footer />
           </div>
           <WhatsAppCTA />

@@ -73,7 +73,7 @@ export function Navbar() {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className={`fixed top-0 left-20 md:left-24 w-[calc(100%-5rem)] md:w-[calc(100%-6rem)] z-50 transition-colors duration-500 ${
+        className={`fixed top-0 left-10 md:left-24 w-[calc(100%-2.5rem)] md:w-[calc(100%-6rem)] z-50 transition-colors duration-500 ${
           scrolled || isMobileMenuOpen
             ? "bg-black/85 backdrop-blur-xl border-b border-white/[0.07] shadow-[0_1px_0_rgba(255,255,255,0.04)]"
             : "bg-transparent"
@@ -157,7 +157,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-0 left-20 md:left-24 w-[calc(100%-5rem)] md:w-[calc(100%-6rem)] bg-black/95 backdrop-blur-3xl z-40 pt-28 px-6 pb-6 flex flex-col"
+            className="fixed inset-0 top-0 left-10 md:left-24 w-[calc(100%-2.5rem)] md:w-[calc(100%-6rem)] bg-black/95 backdrop-blur-3xl z-40 pt-28 px-6 pb-6 flex flex-col"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link, i) => {

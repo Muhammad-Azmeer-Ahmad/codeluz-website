@@ -31,7 +31,7 @@ export function SocialProof() {
   return (
     <>
       {/* ── Process Section ── */}
-      <section className="bg-[#080810] py-32 px-6 relative">
+      <section className="bg-[#080810] py-20 md:py-32 px-6 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="max-w-[1100px] mx-auto">
@@ -89,7 +89,7 @@ export function SocialProof() {
       </section>
 
       {/* ── CTA Banner ── */}
-      <section className="bg-[#06070d] py-24 px-6 relative">
+      <section className="bg-[#06070d] py-16 md:py-24 px-6 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="max-w-[900px] mx-auto text-center">

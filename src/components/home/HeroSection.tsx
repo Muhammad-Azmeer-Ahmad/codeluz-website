@@ -92,7 +92,7 @@ export function HeroSection() {
         {/* Main Headline */}
         <h1
           className="hero-element font-display font-bold text-white leading-[1.05] tracking-[-0.03em] mb-6 drop-shadow-2xl opacity-0"
-          style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)" }}
+          style={{ fontSize: "clamp(2.1rem, 8vw, 6rem)" }}
         >
           Websites Built For <br />
           <span className="relative inline-block">
