@@ -27,7 +27,6 @@
   color: #FF5A00;
 }
 
-/* Section 1 - Hero */
 .targo-hero {
   min-height: 100svh;
   background: linear-gradient(145deg, #3A5B7A 0%, #1C3042 100%);
@@ -216,7 +215,6 @@
   box-shadow: 0 0 0 1px rgba(255,90,0,0.5), 0 12px 36px -10px rgba(230,81,0,0.8);
 }
 
-/* Section 2 - About */
 .targo-about {
   display: flex;
   flex-wrap: wrap;
@@ -288,25 +286,20 @@
   z-index: 1;
 }
 
-/* Desktop sizing constraints */
 @media (min-width: 701px) {
-
   .targo-h1 {
     padding: min(clamp(40px, 9vw, 120px), 9vh) 20px min(clamp(24px, 4vw, 44px), 5vh) clamp(20px, 9vw, 118px);
     font-size: min(clamp(34px, 7.6vw, 80px), 9.2vh);
   }
 }
 
-/* Mobile overrides */
 @media (max-width: 700px) {
-
   .targo-nav-links, .targo-contact-btn {
     display: none;
   }
   .targo-hamburger {
     display: flex;
   }
-  
   .targo-h1 {
     margin-top: 140px;
     padding: 0 20px 28px 20px;
@@ -314,22 +307,5 @@
   }
   .targo-cta-wrapper {
     padding-left: calc(20px + min(238px, 28vw));
-  }
-}
-
-/* Fix: h1 spacing applied via structural selector, since className was missing in component */
-.targo-hero-content > h1 {
-  padding: min(clamp(40px, 9vw, 120px), 9vh) 20px min(clamp(24px, 4vw, 44px), 5vh) clamp(20px, 9vw, 118px);
-  font-size: min(clamp(34px, 7.6vw, 80px), 9.2vh);
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #FFFFFF;
-}
-
-@media (max-width: 700px) {
-  .targo-hero-content > h1 {
-    margin-top: 140px;
-    padding: 0 20px 28px 20px;
-    font-size: clamp(34px, 10vw, 56px);
   }
 }
