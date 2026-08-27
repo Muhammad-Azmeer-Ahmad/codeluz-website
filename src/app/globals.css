@@ -51,8 +51,11 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   html, body {
-    @apply w-full bg-background text-foreground font-body overflow-x-hidden text-lg md:text-xl;
+    @apply w-full bg-background text-foreground font-body overflow-x-clip text-lg md:text-xl;
   }
   
   ::-webkit-scrollbar {
