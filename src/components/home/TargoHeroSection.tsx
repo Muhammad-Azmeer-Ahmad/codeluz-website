@@ -18,14 +18,12 @@ export const TargoHeroSection = () => {
       <section className="targo-hero">
 
         <div className="targo-hero-content">
-          <h1 className="targo-h1">
-            <span className="targo-h1-line">Scaling</span>
-            <span className="targo-h1-line">The</span>
-            <span className="targo-h1-line">Platform</span>
-            <span className="targo-h1-indent">For</span>
-            <span className="targo-h1-indent">Your</span>
-            <span className="targo-h1-indent targo-h1-accent">Business</span>
-          </h1>
+          <h1>
+  <span>Scaling</span>{" "}
+  <span>The</span>{" "}
+  <span>Platform</span>{" "}
+  For Your <span className="text-orange-500">Business</span>
+</h1>
 
           <div className="targo-cta-wrapper">
             <Link href="/services" className="targo-cta no-underline">
