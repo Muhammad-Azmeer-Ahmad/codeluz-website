@@ -31,7 +31,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Websites for Clinics, Gyms & Salons — Pakistan | Codeluz",
-  description: "Codeluz creates high-performance, custom-built websites designed specifically for clinics, gyms, and salons in Pakistan. Get a premium digital presence that drives real business growth.",
+  description: "Codeluz builds high-performance, custom websites for clinics, gyms, and salons in Pakistan — designed to drive real business growth.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
