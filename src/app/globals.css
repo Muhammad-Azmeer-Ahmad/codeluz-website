@@ -1,12 +1,13 @@
+@import url('https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-geist: 'Geist', sans-serif;
-  --font-display: var(--font-outfit), -apple-system, sans-serif;
-  --font-heading: 'Instrument Serif', serif;
-  --font-body: 'Barlow', sans-serif;
+  --font-display: 'Ranade', var(--font-outfit), sans-serif;
+  --font-heading: 'Ranade', 'Instrument Serif', serif;
+  --font-body: 'Ranade', 'Barlow', sans-serif;
   
   --color-brand-cyan: #00F0FF;
   --color-brand-purple: #A855F7;
@@ -51,7 +52,7 @@
 
 @layer base {
   html, body {
-    @apply w-full bg-background text-foreground font-body overflow-x-hidden;
+    @apply w-full bg-background text-foreground font-body overflow-x-hidden text-lg md:text-xl;
   }
   
   ::-webkit-scrollbar {
