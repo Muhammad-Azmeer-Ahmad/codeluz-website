@@ -62,7 +62,7 @@ export default function PortfolioPage() {
               whileHover={{ y: -6 }}
               className="bg-[#0c0e14] border border-white/10 rounded-2xl overflow-hidden group"
             >
-              <Link href={demo.href} className="block p-8">
+              <a href={demo.href} className="block p-8">
                 <div
                   className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
                   style={{
@@ -84,7 +84,7 @@ export default function PortfolioPage() {
                 <p className="text-slate-400 leading-relaxed font-body text-[0.9rem]">
                   {demo.desc}
                 </p>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>
