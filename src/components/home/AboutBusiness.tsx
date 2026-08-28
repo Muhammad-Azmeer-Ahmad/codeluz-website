@@ -16,13 +16,13 @@ export function AboutBusiness() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#D4AF37] mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
+          <div className="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#00F0FF] mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse" />
             AVAILABLE FOR NEW PROJECTS
           </div>
 
           <h2 className="font-heading text-4xl md:text-[3rem] font-extrabold text-foreground mb-3 leading-tight">
-            Websites Built For <span className="text-[#D4AF37]">Your Business</span>
+            Websites Built For <span className="text-[#00F0FF]">Your Business</span>
           </h2>
 
           <p className="text-muted font-semibold text-[1rem] mb-6">
@@ -46,8 +46,10 @@ export function AboutBusiness() {
             </span>
           </div>
 
-          <Link href="/about" className="btn-gold-pill inline-flex items-center gap-2">
-            Discover Our Story <ArrowRight size={16} />
+          <Link href="/about" className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+            <span className="relative z-10">Discover Our Story</span>
+            <ArrowRight size={16} className="relative z-10 transition-transform group-hover:translate-x-1" />
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-200 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
           </Link>
         </motion.div>
 
@@ -60,7 +62,7 @@ export function AboutBusiness() {
           className="relative"
         >
           {/* Ambient glow behind card, matches hero */}
-          <div className="absolute -inset-6 bg-[#D4AF37]/10 blur-[80px] rounded-full pointer-events-none" />
+          <div className="absolute -inset-6 bg-[#3b82f6]/20 blur-[80px] rounded-full pointer-events-none" />
 
           <motion.div
             whileHover={{ y: -6 }}
@@ -73,7 +75,7 @@ export function AboutBusiness() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.4 }}
-                className="w-14 h-14 rounded-full bg-[#D4AF37]/15 flex items-center justify-center text-[#D4AF37] shrink-0"
+                className="w-14 h-14 rounded-full bg-[#3b82f6]/15 flex items-center justify-center text-[#3b82f6] shrink-0"
               >
                 <Users size={26} />
               </motion.div>

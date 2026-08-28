@@ -83,7 +83,7 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
-  const isLightMode = isOverLightHero && !isMobileMenuOpen && !scrolled;
+  const isLightMode = false;
 
   return (
     <>
@@ -96,17 +96,19 @@ export function Navbar() {
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className={`fixed top-0 left-10 md:left-24 w-[calc(100%_-_2.5rem)] md:w-[calc(100%_-_6rem)] z-50 transition-colors duration-500 ${
           scrolled || isMobileMenuOpen
-            ? "bg-background/85 backdrop-blur-xl border-b border-border shadow-[0_1px_0_rgba(255,255,255,0.04)]"
-            : "bg-transparent"
+            ? "bg-[#050B14] border-b border-white/5 shadow-md"
+            : "bg-[#050B14] border-b border-transparent"
         }`}
       >
         <div className="w-full px-6 lg:px-12 h-24 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group no-underline z-50">
-            <span className={`${isLightMode ? "text-black" : "text-foreground"} font-heading font-bold text-2xl tracking-wide`}>
-              Codeluz
-            </span>
-          </Link>
+          <div className="flex-1 flex items-center justify-start">
+            <Link href="/" className="flex items-center gap-2.5 group no-underline z-50">
+              <span className={`${isLightMode ? "text-black" : "text-foreground"} font-heading font-bold text-2xl tracking-wide`}>
+                Codeluz
+              </span>
+            </Link>
+          </div>
 
           {/* Desktop Nav */}
           <nav 
@@ -153,7 +155,7 @@ export function Navbar() {
           </nav>
 
           {/* Right actions */}
-          <div className="flex items-center gap-2 md:gap-3 z-50">
+          <div className="flex-1 flex items-center justify-end gap-2 md:gap-3 z-50">
             <div className={isLightMode ? "opacity-70 hover:opacity-100" : ""}>
               <ThemeToggle />
             </div>

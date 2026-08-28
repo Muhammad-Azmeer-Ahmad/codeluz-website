@@ -30,8 +30,31 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://codeluz.com"),
   title: "Websites for Clinics, Gyms & Salons — Pakistan | Codeluz",
   description: "Codeluz builds high-performance, custom websites for clinics, gyms, and salons in Pakistan — designed to drive real business growth.",
+  openGraph: {
+    title: "Codeluz | Websites for Clinics, Gyms & Salons",
+    description: "Codeluz builds high-performance, custom websites for clinics, gyms, and salons in Pakistan.",
+    url: "https://codeluz.com",
+    siteName: "Codeluz",
+    images: [
+      {
+        url: "/icon.png",
+        width: 800,
+        height: 800,
+        alt: "Codeluz Image",
+      },
+    ],
+    locale: "en_PK",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Codeluz | Premium Websites",
+    description: "High-performance, custom websites for clinics, gyms, and salons.",
+    images: ["/icon.png"],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -52,15 +75,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
       <body className="bg-black text-slate-200 antialiased font-body min-h-screen flex flex-col selection:bg-[#00F0FF]/30 selection:text-white">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="fixed top-0 left-0 w-screen h-screen object-cover z-0 opacity-30 pointer-events-none"
-          >
-            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3GJaYKPxdnQG0Q9O26lu6DPmcHu/hf_20260805_192612_e00017a8-56b0-4957-935b-9ffd87663994.mp4" type="video/mp4" />
-          </video>
+
           <SmoothScroll>
             <div className="relative z-10 flex flex-col min-h-screen w-full">
               <SideMarquee />

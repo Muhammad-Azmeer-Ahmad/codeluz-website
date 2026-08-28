@@ -13,25 +13,25 @@ const features = [
     icon: <LayoutTemplate size={20} />,
     title: "Custom-Built Websites",
     desc: "Every website is designed around your business, giving you a professional online presence without relying on a generic template.",
-    color: "#D4AF37",
+    color: "#00F0FF",
   },
   {
     icon: <ShieldCheck size={20} />,
     title: "Security-Conscious",
     desc: "Security is considered throughout the development process, helping protect your website and giving your customers a safer experience.",
-    color: "#10b981",
+    color: "#3b82f6",
   },
   {
     icon: <CalendarCheck size={20} />,
     title: "Business-Ready Functionality",
     desc: "From appointment bookings to contact forms, we build useful features that support the way your business actually operates.",
-    color: "#f59e0b",
+    color: "#8b5cf6",
   },
   {
     icon: <HeadphonesIcon size={20} />,
     title: "Direct Support",
     desc: "You work directly with the people building your website, with help available for updates, improvements, and ongoing needs.",
-    color: "#00c2ff",
+    color: "#ec4899",
   },
 ];
 
@@ -67,7 +67,7 @@ export function FeaturesGrid() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="text-[#D4AF37] text-[0.75rem] font-bold tracking-[0.2em] uppercase mb-4">
+          <p className="text-[#00F0FF] text-[0.75rem] font-bold tracking-[0.2em] uppercase mb-4">
             Why Work With Us
           </p>
 
@@ -78,7 +78,7 @@ export function FeaturesGrid() {
                 className="text-transparent bg-clip-text"
                 style={{
                   backgroundImage:
-                    "linear-gradient(135deg, #D4AF37, #f5d87a)",
+                    "linear-gradient(135deg, #00F0FF, #3b82f6)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
