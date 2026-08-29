@@ -25,18 +25,27 @@ export function Navbar() {
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
 
   const { scrollY } = useScroll();
+  const [heroHeight, setHeroHeight] = useState(500);
+
+  useEffect(() => {
+    setHeroHeight(window.innerHeight * 0.9);
+    const handleResize = () => setHeroHeight(window.innerHeight * 0.9);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() || 0;
     
-    if (latest > 100 && latest > previous) {
+    if (latest > previous + 10 && latest > 150) {
       setHidden(true);
-    } else {
+    } else if (latest < previous - 10) {
+      setHidden(false);
+    } else if (latest <= 150) {
       setHidden(false);
     }
     
     if (pathname === "/") {
-      const heroHeight = typeof window !== 'undefined' ? window.innerHeight * 0.9 : 500;
       setScrolled(latest > heroHeight);
     } else {
       setScrolled(latest > 30);
@@ -45,13 +54,11 @@ export function Navbar() {
 
   useEffect(() => {
     if (pathname === "/") {
-      const heroHeight = window.innerHeight * 0.9;
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setScrolled(window.scrollY > heroHeight);
     } else {
       setScrolled(window.scrollY > 30);
     }
-  }, [pathname]);
+  }, [pathname, heroHeight]);
 
   // Close modals on Escape
   useEffect(() => {
@@ -89,8 +96,8 @@ export function Navbar() {
           hidden: { y: "-100%" },
         }}
         animate={hidden ? "hidden" : "visible"}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
-        className={`fixed top-0 left-10 md:left-24 w-[calc(100%_-_2.5rem)] md:w-[calc(100%_-_6rem)] z-50 transition-colors duration-500 ${
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 left-10 md:left-24 w-[calc(100%_-_2.5rem)] md:w-[calc(100%_-_6rem)] z-50 transition-all duration-300 ${
           scrolled || isMobileMenuOpen
             ? "bg-white border-b border-black/10 shadow-md dark:bg-[#050B14] dark:border-white/5"
             : "bg-white border-b border-transparent dark:bg-[#050B14] dark:border-transparent"
