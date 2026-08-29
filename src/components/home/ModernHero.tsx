@@ -7,7 +7,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export const ModernHero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-40 pb-16">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-16">
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[128px] animate-pulse" />
