@@ -98,7 +98,7 @@ const AnimatedText = ({ text }: { text: string }) => {
   return (
     <p
       ref={containerRef}
-      className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px] text-[clamp(1rem,2vw,1.35rem)]"
+      className="text-foreground/80 dark:text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px] text-[clamp(1rem,2vw,1.35rem)]"
     >
       {chars.map((char, index) => (
         <AnimatedCharacter
@@ -117,7 +117,7 @@ export const AboutMeSection = () => {
   const paragraphText = "At Codeluz, we engineer digital experiences that cross borders and leave a lasting impact. We specialize in bridging the gap between cutting-edge web development and captivating design. Our mission is to partner with forward-thinking businesses worldwide to help them scale, stand out, and succeed. Let's build something incredible together!";
 
   return (
-    <section className={`w-full min-h-screen flex flex-col items-center justify-center relative px-5 sm:px-8 md:px-10 py-20 bg-[#0C0C0C]/80 backdrop-blur-md ${kanit.className} overflow-hidden`}>
+    <section className={`w-full min-h-screen flex flex-col items-center justify-center relative px-5 sm:px-8 md:px-10 py-20 bg-background/80 backdrop-blur-md ${kanit.className} overflow-hidden`}>
       {/* 4 decorative corner images (absolute positioned, z-0) */}
       
       {/* 1. Top-left -- Moon icon */}

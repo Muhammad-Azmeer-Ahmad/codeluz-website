@@ -43,10 +43,10 @@ export default function PortfolioPage() {
           <span className="text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#D4AF37] mb-3 block">
             PORTFOLIO
           </span>
-          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-white mb-6">
+          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-foreground mb-6">
             See What We Build
           </h1>
-          <p className="text-slate-400 text-lg max-w-[700px] mx-auto font-body">
+          <p className="text-muted text-lg max-w-[700px] mx-auto font-body">
             These are demo websites built to show what a real project could look like for your business.
             Explore one that fits your industry.
           </p>
@@ -60,7 +60,7 @@ export default function PortfolioPage() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.12 }}
               whileHover={{ y: -6 }}
-              className="bg-[#0c0e14] border border-white/10 rounded-2xl overflow-hidden group"
+              className="bg-card border border-border rounded-2xl overflow-hidden group"
             >
               <a href={demo.href} className="block p-8">
                 <div
@@ -73,7 +73,7 @@ export default function PortfolioPage() {
                 >
                   {demo.icon}
                 </div>
-                <h3 className="text-xl font-heading font-bold text-white mb-3 flex items-center gap-2">
+                <h3 className="text-xl font-heading font-bold text-foreground mb-3 flex items-center gap-2">
                   {demo.title}
                   <ArrowUpRight
                     size={18}
@@ -81,7 +81,7 @@ export default function PortfolioPage() {
                     style={{ color: demo.color }}
                   />
                 </h3>
-                <p className="text-slate-400 leading-relaxed font-body text-[0.9rem]">
+                <p className="text-muted leading-relaxed font-body text-[0.9rem]">
                   {demo.desc}
                 </p>
               </a>
@@ -89,7 +89,7 @@ export default function PortfolioPage() {
           ))}
         </div>
         <div className="mt-16 text-center">
-          <p className="text-slate-500 text-sm">
+          <p className="text-muted text-sm">
             Want something built for your specific business?{" "}
             <Link href="/contact" className="text-[#D4AF37] hover:underline">
               Let&apos;s talk

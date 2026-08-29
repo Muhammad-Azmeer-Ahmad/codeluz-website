@@ -71,10 +71,10 @@ export default function ServicesPage() {
           <span className="text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#00F0FF] mb-3 block">
             WHAT WE DELIVER
           </span>
-          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-white mb-6">
+          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-foreground mb-6">
             What We Can Do for You.
           </h1>
-          <p className="text-slate-400 text-lg max-w-[700px] mx-auto font-body">
+          <p className="text-muted text-lg max-w-[700px] mx-auto font-body">
             Practical websites built around what your business actually needs — no templates, no unnecessary extras.
           </p>
         </motion.div>
@@ -91,7 +91,7 @@ export default function ServicesPage() {
               onMouseEnter={() => setHovered(service.id)}
               onMouseLeave={() => setHovered(null)}
               whileHover={{ y: -8 }}
-              className="relative bg-[#0c0e14] border border-white/10 rounded-2xl overflow-hidden flex flex-col h-full group cursor-default"
+              className="relative bg-card border border-border rounded-2xl overflow-hidden flex flex-col h-full group cursor-default"
               style={{
                 boxShadow: hovered === service.id ? `0 20px 60px -20px ${service.color}55` : "none",
                 borderColor: hovered === service.id ? `${service.color}66` : undefined,
@@ -108,7 +108,7 @@ export default function ServicesPage() {
               />
 
               {/* Top accent line that fills on hover */}
-              <div className="h-[3px] w-full bg-white/5 relative overflow-hidden">
+              <div className="h-[3px] w-full bg-black/5 dark:bg-white/5 relative overflow-hidden">
                 <motion.div
                   className="absolute inset-y-0 left-0"
                   style={{ backgroundColor: service.color }}
@@ -135,10 +135,10 @@ export default function ServicesPage() {
                   {service.icon}
                 </motion.div>
 
-                <h3 className="text-xl font-heading font-bold text-white mb-3">
+                <h3 className="text-xl font-heading font-bold text-foreground mb-3">
                   {service.title}
                 </h3>
-                <p className="text-slate-400 leading-relaxed font-body text-[0.9rem] mb-5">
+                <p className="text-muted leading-relaxed font-body text-[0.9rem] mb-5">
                   {service.desc}
                 </p>
 
@@ -147,7 +147,7 @@ export default function ServicesPage() {
                   {service.highlights.map((h, idx) => (
                     <motion.li
                       key={idx}
-                      className="flex items-start gap-2 text-[0.82rem] text-slate-300"
+                      className="flex items-start gap-2 text-[0.82rem] text-muted"
                       initial={{ opacity: 0.6, x: 0 }}
                       animate={{
                         opacity: hovered === service.id ? 1 : 0.6,
@@ -167,10 +167,10 @@ export default function ServicesPage() {
               </div>
 
               {/* Bottom CTA row */}
-              <div className="border-t border-white/10 p-5 relative z-10">
+              <div className="border-t border-border p-5 relative z-10">
                 <Link
                   href="/contact"
-                  className="flex items-center justify-between text-sm font-bold tracking-wide text-slate-300 group-hover:text-white transition-colors"
+                  className="flex items-center justify-between text-sm font-bold tracking-wide text-muted group-hover:text-foreground transition-colors"
                 >
                   Get a Quote
                   <motion.span
