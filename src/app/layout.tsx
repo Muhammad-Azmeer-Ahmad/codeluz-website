@@ -73,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
-      <body className="bg-black text-slate-200 antialiased font-body min-h-screen flex flex-col selection:bg-[#00F0FF]/30 selection:text-white">
+      <body className="bg-background text-foreground antialiased font-body min-h-screen flex flex-col selection:bg-[#00F0FF]/30 selection:text-white">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
 
           <SmoothScroll>

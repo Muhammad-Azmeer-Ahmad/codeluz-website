@@ -83,8 +83,7 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
-  const isLightMode = false;
-
+  // Remove isLightMode false as we will use tailwind dark mode classes
   return (
     <>
       <motion.header
@@ -96,15 +95,15 @@ export function Navbar() {
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className={`fixed top-0 left-10 md:left-24 w-[calc(100%_-_2.5rem)] md:w-[calc(100%_-_6rem)] z-50 transition-colors duration-500 ${
           scrolled || isMobileMenuOpen
-            ? "bg-[#050B14] border-b border-white/5 shadow-md"
-            : "bg-[#050B14] border-b border-transparent"
+            ? "bg-white border-b border-black/10 shadow-md dark:bg-[#050B14] dark:border-white/5"
+            : "bg-white border-b border-transparent dark:bg-[#050B14] dark:border-transparent"
         }`}
       >
         <div className="w-full px-6 lg:px-12 h-24 flex items-center justify-between">
           {/* Logo */}
           <div className="flex-1 flex items-center justify-start">
             <Link href="/" className="flex items-center gap-2.5 group no-underline z-50">
-              <span className={`${isLightMode ? "text-black" : "text-foreground"} font-heading font-bold text-2xl tracking-wide`}>
+              <span className="text-black dark:text-foreground font-heading font-bold text-2xl tracking-wide">
                 Codeluz
               </span>
             </Link>
@@ -112,11 +111,7 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <nav 
-            className={`hidden lg:flex items-center gap-1 border rounded-full px-2 py-1.5 ${
-              isLightMode
-                ? "bg-black/5 border-black/10"
-                : "bg-black/5 dark:bg-white/[0.04] border-border"
-            }`}
+            className="hidden lg:flex items-center gap-1 border rounded-full px-2 py-1.5 bg-black/5 border-black/10 dark:bg-white/[0.04] dark:border-border"
             onMouseLeave={() => setHoveredPath(null)}
           >
             {navLinks.map((link) => {
@@ -133,8 +128,8 @@ export function Navbar() {
                   onMouseEnter={() => setHoveredPath(link.href)}
                   className={`relative px-4 py-1.5 rounded-full text-[0.83rem] font-medium tracking-wide transition-colors duration-200 z-10 ${
                     isHighlighted
-                      ? (isLightMode ? "text-black" : "text-foreground")
-                      : (isLightMode ? "text-black/60 hover:text-black" : "text-muted hover:text-foreground")
+                      ? "text-black dark:text-foreground"
+                      : "text-black/60 hover:text-black dark:text-muted dark:hover:text-foreground"
                   }`}
                 >
                   {link.label}
@@ -142,9 +137,9 @@ export function Navbar() {
                     <motion.div
                       layoutId="nav-pill"
                       className={`absolute inset-0 rounded-full z-[-1] border ${
-                        isLightMode
-                          ? (isHovered ? "bg-black/10 border-black/10" : "bg-black/5 border-transparent")
-                          : (isHovered ? "bg-black/10 dark:bg-white/[0.12] border-border" : "bg-black/5 dark:bg-white/[0.08] border-border")
+                        isHovered 
+                          ? "bg-black/10 border-black/10 dark:bg-white/[0.12] dark:border-border" 
+                          : "bg-black/5 border-transparent dark:bg-white/[0.08] dark:border-border"
                       }`}
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
@@ -156,38 +151,25 @@ export function Navbar() {
 
           {/* Right actions */}
           <div className="flex-1 flex items-center justify-end gap-2 md:gap-3 z-50">
-            <div className={isLightMode ? "opacity-70 hover:opacity-100" : ""}>
+            <div className="dark:opacity-100 opacity-70 hover:opacity-100 transition-opacity">
               <ThemeToggle />
             </div>
             <button
               onClick={() => setIsSearchOpen(true)}
-              className={`w-10 h-10 flex items-center justify-center transition-colors rounded-full ${
-                isLightMode
-                  ? "text-black/70 hover:text-black hover:bg-black/10"
-                  : "text-muted hover:text-foreground hover:bg-black/5 dark:hover:bg-white/[0.06]"
-              }`}
+              className="w-10 h-10 flex items-center justify-center transition-colors rounded-full text-black/70 hover:text-black hover:bg-black/10 dark:text-muted dark:hover:text-foreground dark:hover:bg-white/[0.06]"
             >
               <Search size={18} />
             </button>
             <Link
               href="/contact"
-              className={`hidden md:inline-flex items-center gap-1.5 font-heading font-bold text-[0.78rem] tracking-widest uppercase px-6 py-2.5 rounded-full transition-all duration-300 ${
-                isLightMode
-                  ? "bg-black text-white hover:bg-black/80 shadow-[0_0_20px_rgba(0,0,0,0.15)] hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:-translate-y-0.5"
-                  : "bg-white hover:bg-slate-100 text-black shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-0.5"
-              }`}
+              className="hidden md:inline-flex items-center gap-1.5 font-heading font-bold text-[0.78rem] tracking-widest uppercase px-6 py-2.5 rounded-full transition-all duration-300 bg-black text-white hover:bg-black/80 shadow-[0_0_20px_rgba(0,0,0,0.15)] hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:-translate-y-0.5 dark:bg-white dark:text-black dark:hover:bg-slate-100 dark:shadow-[0_0_20px_rgba(255,255,255,0.15)] dark:hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
             >
               Get a Quote
             </Link>
             
-            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden w-10 h-10 flex items-center justify-center transition-colors rounded-full ${
-                isLightMode
-                  ? "text-black/70 hover:text-black hover:bg-black/10"
-                  : "text-muted hover:text-foreground hover:bg-black/5 dark:hover:bg-white/[0.06]"
-              }`}
+              className="lg:hidden w-10 h-10 flex items-center justify-center transition-colors rounded-full text-black/70 hover:text-black hover:bg-black/10 dark:text-muted dark:hover:text-foreground dark:hover:bg-white/[0.06]"
             >
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -231,7 +213,7 @@ export function Navbar() {
             <div className="mt-auto pt-8 border-t border-border flex flex-col gap-4">
               <Link
                 href="/contact"
-                className="w-full flex items-center justify-center gap-1.5 bg-white hover:bg-slate-100 text-black font-heading font-bold text-sm tracking-widest uppercase px-6 py-4 rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all"
+                className="w-full flex items-center justify-center gap-1.5 bg-black text-white hover:bg-black/80 dark:bg-white dark:hover:bg-slate-100 dark:text-black font-heading font-bold text-sm tracking-widest uppercase px-6 py-4 rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] dark:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all"
               >
                 Get a Quote
               </Link>

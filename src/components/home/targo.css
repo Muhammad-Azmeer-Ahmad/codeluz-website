@@ -29,11 +29,15 @@
 
 .targo-hero {
   min-height: 100svh;
-  background: linear-gradient(145deg, #3A5B7A 0%, #1C3042 100%);
+  background: linear-gradient(145deg, #F1F5F9 0%, #E2E8F0 100%);
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
+}
+
+.dark .targo-hero {
+  background: linear-gradient(145deg, #3A5B7A 0%, #1C3042 100%);
 }
 
 .targo-nav {
@@ -74,9 +78,13 @@
 .targo-logo-text {
   font-size: clamp(22px, 5vw, 30px);
   font-weight: 400;
-  color: #FFFFFF;
+  color: #111111;
   letter-spacing: -0.5px;
   text-transform: lowercase;
+}
+
+.dark .targo-logo-text {
+  color: #FFFFFF;
 }
 
 .targo-nav-links {
@@ -91,13 +99,17 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
+  color: #111111;
+}
+
+.dark .targo-nav-link {
   color: #FFFFFF;
 }
 
 .targo-contact-btn {
   background: transparent;
   border: none;
-  color: #FFFFFF;
+  color: #111111;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   padding: 14px 26px;
@@ -110,7 +122,15 @@
   font-weight: 700;
 }
 
+.dark .targo-contact-btn {
+  color: #FFFFFF;
+}
+
 .targo-contact-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dark .targo-contact-btn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -127,6 +147,10 @@
 .targo-hamburger span {
   width: 22px;
   height: 2px;
+  background: #111111;
+}
+
+.dark .targo-hamburger span {
   background: #FFFFFF;
 }
 
@@ -164,6 +188,10 @@
 .targo-h1 {
   font-weight: 700;
   text-transform: uppercase;
+  color: #111111;
+}
+
+.dark .targo-h1 {
   color: #FFFFFF;
 }
 

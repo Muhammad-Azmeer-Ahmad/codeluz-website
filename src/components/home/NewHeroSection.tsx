@@ -27,7 +27,7 @@ export const NewHeroSection = () => {
       />
 
       <nav className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-5 sm:px-8 py-5">
-        <div className="flex items-center gap-2 text-white font-medium text-base">
+        <div className="flex items-center gap-2 text-slate-900 dark:text-white font-medium text-base">
           <InfinityIcon size={22} strokeWidth={1.5} />
           <span>Equilibrium</span>
         </div>
@@ -37,7 +37,7 @@ export const NewHeroSection = () => {
             <button
               key={link.label}
               className={`flex items-center gap-0.5 px-3 py-1.5 rounded-md text-sm transition-colors ${
-                link.active ? "bg-white/15 text-white" : "text-white/70 hover:text-white"
+                link.active ? "bg-black/10 text-slate-900 dark:bg-white/15 dark:text-white" : "text-slate-600 hover:text-slate-900 dark:text-white/70 dark:hover:text-white"
               }`}
             >
               {link.label}
@@ -47,16 +47,16 @@ export const NewHeroSection = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <button className="liquid-glass text-white text-sm font-medium px-4 py-2.5 rounded-full hover:bg-white/5 transition-colors">
+          <button className="liquid-glass text-slate-900 dark:text-white text-sm font-medium px-4 py-2.5 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors border border-black/10 dark:border-transparent">
             Log in
           </button>
-          <button className="bg-white text-black text-sm font-medium px-4 py-2.5 rounded-full hover:bg-white/90 transition-colors">
+          <button className="bg-slate-900 text-white dark:bg-white dark:text-black text-sm font-medium px-4 py-2.5 rounded-full hover:bg-slate-800 dark:hover:bg-white/90 transition-colors">
             Begin Now
           </button>
         </div>
 
         <button
-          className="md:hidden liquid-glass text-white p-2 rounded-lg"
+          className="md:hidden liquid-glass text-slate-900 dark:text-white p-2 rounded-lg border border-black/10 dark:border-transparent"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -69,18 +69,18 @@ export const NewHeroSection = () => {
             <button
               key={link.label}
               className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-sm ${
-                link.active ? "bg-white/15 text-white" : "text-white/70 hover:text-white"
+                link.active ? "bg-black/10 text-slate-900 dark:bg-white/15 dark:text-white" : "text-slate-600 hover:text-slate-900 dark:text-white/70 dark:hover:text-white"
               }`}
             >
               {link.label}
               {link.dropdown && <ChevronDown size={16} />}
             </button>
           ))}
-          <div className="flex gap-2 mt-2 pt-3 border-t border-white/10">
-            <button className="flex-1 liquid-glass text-white text-sm font-medium px-4 py-2.5 rounded-full hover:bg-white/5 transition-colors">
+          <div className="flex gap-2 mt-2 pt-3 border-t border-black/10 dark:border-white/10">
+            <button className="flex-1 liquid-glass text-slate-900 dark:text-white text-sm font-medium px-4 py-2.5 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors border border-black/10 dark:border-transparent">
               Log in
             </button>
-            <button className="flex-1 bg-white text-black text-sm font-medium px-4 py-2.5 rounded-full hover:bg-white/90 transition-colors">
+            <button className="flex-1 bg-slate-900 text-white dark:bg-white dark:text-black text-sm font-medium px-4 py-2.5 rounded-full hover:bg-slate-800 dark:hover:bg-white/90 transition-colors">
               Begin Now
             </button>
           </div>
@@ -88,17 +88,17 @@ export const NewHeroSection = () => {
       )}
 
       <div className="absolute bottom-0 left-0 z-20 px-6 sm:px-12 pb-10 sm:pb-16 max-w-2xl">
-        <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-medium leading-tight tracking-tight mb-4">
+        <h1 className="text-slate-900 dark:text-white text-4xl sm:text-5xl lg:text-6xl font-medium leading-tight tracking-tight mb-4">
           Live Better, Feel Whole Every Day
         </h1>
-        <p className="text-white/60 text-sm leading-relaxed mb-7 max-w-md">
+        <p className="text-slate-600 dark:text-white/60 text-sm leading-relaxed mb-7 max-w-md">
           Take charge of how you feel with a companion built for your journey—build routines, follow your growth, and unlock tailored insights for a steadier, more vibrant life each day.
         </p>
         <div className="flex flex-wrap items-center gap-3">
-          <button className="bg-white text-black text-sm sm:text-base font-medium px-6 sm:px-7 py-3 rounded-full hover:bg-white/90 transition-colors">
+          <button className="bg-slate-900 text-white dark:bg-white dark:text-black text-sm sm:text-base font-medium px-6 sm:px-7 py-3 rounded-full hover:bg-slate-800 dark:hover:bg-white/90 transition-colors">
             Start Today
           </button>
-          <button className="liquid-glass text-white text-sm sm:text-base font-medium px-6 sm:px-7 py-3 rounded-full hover:bg-white/5 transition-colors">
+          <button className="liquid-glass text-slate-900 dark:text-white text-sm sm:text-base font-medium px-6 sm:px-7 py-3 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors border border-black/10 dark:border-transparent">
             Discover How
           </button>
         </div>
