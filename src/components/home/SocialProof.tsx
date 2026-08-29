@@ -104,7 +104,7 @@ export function SocialProof() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
 
               <span className="text-[#D4AF37] text-[0.75rem] font-bold tracking-widest uppercase">
-                Let's Build Your Website
+                Let&apos;s Build Your Website
               </span>
             </div>
 
@@ -124,7 +124,7 @@ export function SocialProof() {
             </h2>
 
             <p className="text-muted text-lg font-body mb-10 max-w-[580px] mx-auto leading-relaxed">
-              Tell us what you need, and we'll discuss your goals, recommend
+              Tell us what you need, and we&apos;ll discuss your goals, recommend
               the right approach, and provide a clear quote for your project.
             </p>
 

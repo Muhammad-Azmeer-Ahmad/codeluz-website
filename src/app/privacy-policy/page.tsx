@@ -9,7 +9,7 @@ export default function PrivacyPolicyPage() {
           <p>Last updated: August 2026</p>
 
           <p>
-            Codeluz ("we," "us," or "our") operates the website codeluz.com. This Privacy Policy explains what information we collect, how we use it, and the choices you have regarding your data when you visit our website or engage our services.
+            Codeluz (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the website codeluz.com. This Privacy Policy explains what information we collect, how we use it, and the choices you have regarding your data when you visit our website or engage our services.
           </p>
 
           <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">1. Information We Collect</h2>
@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">8. Changes to This Policy</h2>
           <p>
-            We may update this Privacy Policy from time to time to reflect changes in our practices or for legal and operational reasons. The "Last updated" date at the top of this page will reflect the most recent revision.
+            We may update this Privacy Policy from time to time to reflect changes in our practices or for legal and operational reasons. The &quot;Last updated&quot; date at the top of this page will reflect the most recent revision.
           </p>
 
           <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">9. Contact Us</h2>

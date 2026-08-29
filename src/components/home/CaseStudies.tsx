@@ -64,7 +64,7 @@ export function CaseStudies() {
             <span className="inline-block bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-[0.7rem] font-bold px-3 py-1 rounded-full tracking-widest mb-4">EDTECH • AI PLATFORM</span>
             <h3 className="font-heading text-3xl font-bold text-white mb-4 leading-tight">The Book of Tomorrow — Adaptive Educational Platform</h3>
             <p className="text-slate-400 leading-relaxed mb-8 font-body text-[1.05rem]">
-              A next-generation educational platform for robotics engineering that adapts to every reader's skill level, offering one-click translations and interactive AI Q&A grounded in custom content.
+              A next-generation educational platform for robotics engineering that adapts to every reader&apos;s skill level, offering one-click translations and interactive AI Q&A grounded in custom content.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">

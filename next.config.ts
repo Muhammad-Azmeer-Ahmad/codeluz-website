@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "shrug-person-78902957.figma.site",
+      },
     ],
   },
   async rewrites() {

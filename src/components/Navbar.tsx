@@ -23,7 +23,6 @@ export function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
-  const [isOverLightHero, setIsOverLightHero] = useState(false);
 
   const { scrollY } = useScroll();
 
@@ -39,20 +38,17 @@ export function Navbar() {
     if (pathname === "/") {
       const heroHeight = typeof window !== 'undefined' ? window.innerHeight * 0.9 : 500;
       setScrolled(latest > heroHeight);
-      setIsOverLightHero(latest <= heroHeight);
     } else {
       setScrolled(latest > 30);
-      setIsOverLightHero(false);
     }
   });
 
   useEffect(() => {
     if (pathname === "/") {
       const heroHeight = window.innerHeight * 0.9;
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setScrolled(window.scrollY > heroHeight);
-      setIsOverLightHero(window.scrollY <= heroHeight);
     } else {
-      setIsOverLightHero(false);
       setScrolled(window.scrollY > 30);
     }
   }, [pathname]);
@@ -80,6 +76,7 @@ export function Navbar() {
   }, [isMobileMenuOpen, isSearchOpen]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMobileMenuOpen(false);
   }, [pathname]);
 

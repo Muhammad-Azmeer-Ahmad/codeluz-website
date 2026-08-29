@@ -18,6 +18,7 @@ export default function ContactPage() {
     const params = new URLSearchParams(window.location.search);
     const plan = params.get("plan");
     if (plan && ["launch", "business", "enterprise"].includes(plan.toLowerCase())) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedPlan(plan.toLowerCase());
     }
   }, []);
@@ -43,7 +44,7 @@ export default function ContactPage() {
       } else {
         setStatus("error");
       }
-    } catch (err) {
+    } catch {
       setStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -56,10 +57,10 @@ export default function ContactPage() {
         <div className="text-center mb-16">
           <span className="text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#A855F7] mb-3 block">GET IN TOUCH</span>
           <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-foreground mb-6">
-            Let's Talk About Your Website.
+            Let&apos;s Talk About Your Website.
           </h1>
           <p className="text-muted text-lg max-w-[700px] mx-auto font-body">
-            Tell us a bit about your business and what you need — we'll get back to you to book a quick call and figure out the best fit.
+            Tell us a bit about your business and what you need — we&apos;ll get back to you to book a quick call and figure out the best fit.
           </p>
         </div>
 
@@ -118,7 +119,7 @@ export default function ContactPage() {
               whileHover={{ borderColor: "rgba(168,85,247,0.4)", boxShadow: "0 0 30px -10px rgba(168,85,247,0.35)" }}
             >
               <p className="text-muted text-sm font-body leading-relaxed">
-                Prefer to talk it through first? Message us on WhatsApp or email and we'll set up a quick call — no pressure, just a conversation about what you need.
+                Prefer to talk it through first? Message us on WhatsApp or email and we&apos;ll set up a quick call — no pressure, just a conversation about what you need.
               </p>
             </motion.div>
           </motion.div>
@@ -258,7 +259,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   className="text-[#00FF88] text-center mt-2 font-semibold text-sm"
                 >
-                  Thanks! We'll reach out to schedule a call soon.
+                  Thanks! We&apos;ll reach out to schedule a call soon.
                 </motion.p>
               )}
               {status === "error" && (

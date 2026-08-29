@@ -38,7 +38,7 @@ export function BudgetEstimator() {
       } else {
         setStatus("error");
       }
-    } catch (err) {
+    } catch {
       setStatus("error");
     } finally {
       setIsSubmitting(false);

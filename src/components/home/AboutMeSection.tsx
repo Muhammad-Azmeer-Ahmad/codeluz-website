@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { Kanit } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -19,7 +20,6 @@ const FadeIn = ({
   y = 30,
   className = "",
   style = {},
-  as: Component = "div",
   children,
 }: {
   delay?: number;
@@ -28,13 +28,10 @@ const FadeIn = ({
   y?: number;
   className?: string;
   style?: React.CSSProperties;
-  as?: React.ElementType;
   children: React.ReactNode;
 }) => {
-  const MotionComponent = motion.create(Component as any);
-
   return (
-    <MotionComponent
+    <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "50px", amount: 0 }}
@@ -47,7 +44,7 @@ const FadeIn = ({
       style={style}
     >
       {children}
-    </MotionComponent>
+    </motion.div>
   );
 };
 
@@ -60,7 +57,7 @@ const AnimatedCharacter = ({
   char: string;
   index: number;
   totalChars: number;
-  scrollYProgress: any;
+  scrollYProgress: MotionValue<number>;
 }) => {
   const charProgress = index / totalChars;
   const start = Math.max(0, charProgress - 0.1);
@@ -131,9 +128,11 @@ export const AboutMeSection = () => {
         y={0}
         className="absolute z-0 top-[4%] left-[1%] sm:left-[2%] md:left-[4%]"
       >
-        <img
+        <Image
           src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png"
           alt="Moon icon"
+          width={210}
+          height={210}
           className="w-[120px] sm:w-[160px] md:w-[210px] h-auto"
         />
       </FadeIn>
@@ -146,9 +145,11 @@ export const AboutMeSection = () => {
         y={0}
         className="absolute z-0 bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%]"
       >
-        <img
+        <Image
           src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png"
           alt="3D object"
+          width={180}
+          height={180}
           className="w-[100px] sm:w-[140px] md:w-[180px] h-auto"
         />
       </FadeIn>
@@ -161,9 +162,11 @@ export const AboutMeSection = () => {
         y={0}
         className="absolute z-0 top-[4%] right-[1%] sm:right-[2%] md:right-[4%]"
       >
-        <img
+        <Image
           src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/lego_icon-1.703bb594.png"
           alt="Lego icon"
+          width={210}
+          height={210}
           className="w-[120px] sm:w-[160px] md:w-[210px] h-auto"
         />
       </FadeIn>
@@ -176,9 +179,11 @@ export const AboutMeSection = () => {
         y={0}
         className="absolute z-0 bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%]"
       >
-        <img
+        <Image
           src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png"
           alt="3D group"
+          width={220}
+          height={220}
           className="w-[130px] sm:w-[170px] md:w-[220px] h-auto"
         />
       </FadeIn>

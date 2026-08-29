@@ -9,7 +9,7 @@ export default function TermsOfServicePage() {
           <p>Last updated: August 2026</p>
 
           <p>
-            These Terms of Service ("Terms") govern your use of the Codeluz website (codeluz.com) and any services provided by Codeluz ("we," "us," or "our"). By using our website, submitting an inquiry, or engaging our services, you agree to these Terms.
+            These Terms of Service (&quot;Terms&quot;) govern your use of the Codeluz website (codeluz.com) and any services provided by Codeluz (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;). By using our website, submitting an inquiry, or engaging our services, you agree to these Terms.
           </p>
 
           <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">1. Our Services</h2>
@@ -34,7 +34,7 @@ export default function TermsOfServicePage() {
 
           <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">5. Revisions & Scope Changes</h2>
           <p>
-            Each project includes a reasonable number of revisions as agreed upon before work begins. Requests that fall outside the original agreed scope may be treated as additional work and billed separately, with the client's agreement.
+            Each project includes a reasonable number of revisions as agreed upon before work begins. Requests that fall outside the original agreed scope may be treated as additional work and billed separately, with the client&apos;s agreement.
           </p>
 
           <h2 className="text-white text-xl font-heading font-bold mt-8 mb-2">6. Ownership & Intellectual Property</h2>
