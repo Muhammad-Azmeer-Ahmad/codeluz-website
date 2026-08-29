@@ -137,7 +137,7 @@ export function Navbar() {
                   }`}
                 >
                   {link.label}
-                  {(isActive || isHovered) && (
+                  {isHighlighted && (
                     <motion.div
                       layoutId="nav-pill"
                       className={`absolute inset-0 rounded-full z-[-1] border ${
@@ -145,7 +145,7 @@ export function Navbar() {
                           ? "bg-black/10 border-black/10 dark:bg-white/[0.12] dark:border-border" 
                           : "bg-black/5 border-transparent dark:bg-white/[0.08] dark:border-border"
                       }`}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
                 </Link>
