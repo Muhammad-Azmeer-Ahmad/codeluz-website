@@ -78,7 +78,7 @@ export default function ContactPage() {
 
               <div className="flex flex-col gap-6">
                 {[
-                  { icon: <Phone size={20} />, label: "WhatsApp", value: "+92 327 4644729", color: "#00F0FF" },
+                  { icon: <Phone size={20} />, label: "WhatsApp", value: "+92 303 5637931", color: "#00F0FF" },
                   { icon: <Mail size={20} />, label: "Email", value: "contact@codeluz.com", color: "#A855F7" },
                   { icon: <MapPin size={20} />, label: "Based In", value: "Lahore, Pakistan", color: "#D4AF37" },
                 ].map((item, idx) => (
