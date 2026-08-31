@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Stethoscope, Dumbbell, ArrowUpRight, Scissors } from "lucide-react";
@@ -34,6 +35,16 @@ const demos = [
 ];
 
 export default function PortfolioPage() {
+  const [loadIframes, setLoadIframes] = useState(false);
+
+  useEffect(() => {
+    // Delay loading iframes until after initial page render to improve performance
+    const timer = setTimeout(() => {
+      setLoadIframes(true);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen pt-32 pb-20 relative">
       <section className="px-8 lg:px-12 max-w-[1300px] mx-auto">
@@ -68,23 +79,27 @@ export default function PortfolioPage() {
               <Link href={demo.href} className="block h-full">
                 <div className="bg-card border border-border rounded-2xl overflow-hidden h-full flex flex-col shadow-lg transition-all duration-300 group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] group-hover:border-white/20">
                   <div className="relative aspect-[16/10] bg-muted/10 border-b border-border overflow-hidden">
+                    {/* Placeholder shown until iframe loads or if no preview */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-muted/50 gap-4 transition-opacity duration-500">
+                      <div className="p-4 rounded-full bg-background/50 border border-border">
+                        {demo.icon}
+                      </div>
+                      {!demo.previewUrl && (
+                        <span className="font-heading text-sm uppercase tracking-widest font-semibold">Coming Soon</span>
+                      )}
+                    </div>
+                    
                     {/* Live Preview Iframe */}
-                    {demo.previewUrl ? (
-                      <div className="absolute inset-0 w-full h-full">
+                    {demo.previewUrl && loadIframes && (
+                      <div className="absolute inset-0 w-full h-full animate-in fade-in duration-700">
                         {/* We make the iframe 4x larger and scale it down to 25% so it renders as a desktop thumbnail */}
                         <iframe
                           src={demo.previewUrl}
-                          className="absolute top-0 left-0 w-[400%] h-[400%] origin-top-left scale-[0.25] pointer-events-none border-0"
+                          className="absolute top-0 left-0 w-[400%] h-[400%] origin-top-left scale-[0.25] pointer-events-none border-0 bg-background"
                           tabIndex={-1}
                           aria-hidden="true"
+                          loading="lazy"
                         />
-                      </div>
-                    ) : (
-                      <div className="absolute inset-0 flex flex-col items-center justify-center text-muted/50 gap-4">
-                        <div className="p-4 rounded-full bg-background/50 border border-border">
-                          {demo.icon}
-                        </div>
-                        <span className="font-heading text-sm uppercase tracking-widest font-semibold">Coming Soon</span>
                       </div>
                     )}
                     {/* Glass Overlay on Hover */}
