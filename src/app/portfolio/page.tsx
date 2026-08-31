@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Stethoscope, Dumbbell, ArrowUpRight } from "lucide-react";
 
 const demos = [
   {
