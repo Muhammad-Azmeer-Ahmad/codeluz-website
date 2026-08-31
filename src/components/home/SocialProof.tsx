@@ -71,7 +71,10 @@ export function SocialProof() {
                   <div className="hidden lg:block absolute top-6 left-[calc(100%_-_12px)] w-full h-px bg-gradient-to-r from-border to-transparent -z-0" />
                 )}
 
-                <div className="font-display text-[3.5rem] font-black text-black/5 dark:text-white/5 leading-none mb-4 select-none">
+                <div
+  className="font-display text-[3.5rem] font-black leading-none mb-4 select-none"
+  style={{ color: "rgba(212, 175, 55, 0.35)" }}
+>
                   {item.step}
                 </div>
 
