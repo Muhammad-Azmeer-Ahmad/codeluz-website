@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Stethoscope, Dumbbell, ArrowUpRight } from "lucide-react";
+import { Stethoscope, Dumbbell, ArrowUpRight, Scissors } from "lucide-react";
 
 const demos = [
   {
@@ -22,7 +22,6 @@ const demos = [
     href: "/demo-gym",
     previewUrl: "/demo-gym/index.html",
   },
-<<<<<<< HEAD
   {
     id: "salon",
     title: "Salon Website",
@@ -32,8 +31,6 @@ const demos = [
     href: "/demo-salon", // This one doesn't exist yet, so we'll keep the Next.js placeholder route
     previewUrl: "",
   },
-=======
->>>>>>> d89d51b0f3541a1656932e818536878f28130e29
 ];
 
 export default function PortfolioPage() {
