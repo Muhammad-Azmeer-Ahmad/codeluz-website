@@ -23,15 +23,6 @@ const demos = [
     href: "/demo-gym",
     previewUrl: "/demo-gym/index.html",
   },
-  {
-    id: "salon",
-    title: "Salon Website",
-    desc: "An elegant spa and salon website with a beautiful service menu and integrated booking platform.",
-    icon: <Scissors size={26} />,
-    color: "#C084FC",
-    href: "/demo-salon", // This one doesn't exist yet, so we'll keep the Next.js placeholder route
-    previewUrl: "",
-  },
 ];
 
 export default function PortfolioPage() {
